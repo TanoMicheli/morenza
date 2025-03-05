@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morenza Auténtico Sabor</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kadwa:wght@400;700&family=Kanit:ital,wght@1,300;1,700&family=Lato:ital@1&family=Montserrat:ital,wght@0,650;1,650&family=Poppins:ital,wght@1,400;1,500&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/logos/logo_sim_1.png" sizes="32x32">
+  <style>
+    @font-face {
+      font-family: 'Blauer Nue';
+      src: url('/fonts/Blauer-Nue-Regular-iF6626350c83fdf.otf') format('opentype');
+      font-weight: 500;
+    }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background-color: #1e1e1e;
+    }
+    header{
+      font-family: 'Blauer Nue', sans-serif;
+    }
+    h1, h2, h3, p, a {
+      font-family: 'Bebas Neue', 'Kadwa', 'Kanit', 'Lato', 'Montserrat', 'Poppins', 'Roboto Slab', sans-serif;
+    }
+    .service-card img {
+      transition: transform 0.3s ease-in-out;
+    }
+    .service-card:hover img {
+      transform: scale(1.1);
+    }
+    .icon-facebook {
+      color: #1877F2;
+    }
+    .icon-instagram {
+      color: #C13584;
+    }
+    .icon-linkedin {
+      color: #0A66C2;
+    }
+    .cut-map img {
+      transition: transform 0.3s ease-in-out;
+    }
+    .cut-map:hover img {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body class="text-white">
+  <header class="text-white py-4" style="background-color: #BF1F2E;">
+    <div class="container mx-auto flex items-center justify-between">
+      <a href="index.html">
+        <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="text-black h-28">
+      </a>
+      <nav class="space-x-4 text-2xl" style="font-family: 'Blauer Nue', sans-serif;">
+        <a href="/index.html" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Inicio</a>
+        <a href="/empresa.html" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Empresa</a>
+        <a href="#" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Servicios</a>
+        <a href="#" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Contacto</a>
+      </nav> 
+    </div>
+  </header>
+
+  <section class="relative h-screen bg-black bg-center" style="background-image: url('/images/img192.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div class="text-center">
+        <h1 class="text-5xl font-bold text-red-600" style="letter-spacing: 3px;">Bienvenidos a Nuestro Sitio</h1>
+        <p class="mt-4 text-4xl font-semibold text-white" style="letter-spacing: 8px;">AUTÉNTICO SABOR</p>
+        
+        <!-- Línea horizontal más gruesa -->
+        <div class="my-4 border-t-4 border-white w-1/6 mx-auto"></div>
+        
+        <h2 class="text-2xl font-semibold text-white" style="letter-spacing: 2.5px;">100% ARGENTINO</h2>
+        
+        <a href="#" class="mt-6 inline-block bg-red-600 text-white px-8 py-4 text-xl rounded hover:bg-red-400" style="letter-spacing: 2.5px;">Conócenos</a>
+      </div>
+    </div>
+  </section>  
+
+  <section class="py-12 bg-white" style="background-color: rgb(158, 112, 89);">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-8" style="letter-spacing: 2.7px; color: #E5DAD1">Sobre Nosotros</h2>
+      <p class="text-2xl text-gray-900 text-center max-w-3xl mx-auto" style="color:#231517">
+        Somos una empresa comprometida con ofrecer calidad premium, desde el frigorifico hasta tu mesa.
+      </p>
+    </div>
+  </section>    
+
+  <section class="py-12" style="background-color: #E5DAD1;">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12" style="letter-spacing: 2.3px; color: #9E7059;">Nuestros Servicios</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Servicio 1 -->
+        <a href="#" class="service-card block bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <div class="overflow-hidden rounded-lg">
+            <img src="/images/img91.jpg" alt="Servicio 1" class="w-full h-48 object-cover rounded-lg transform hover:scale-105 transition duration-300">
+          </div>
+          <h3 class="text-xl font-bold text-red-600 mt-4 text-center">Servicio 1</h3>
+          <p class="text-gray-700 mt-2 text-center">Descripción del servicio 1.</p>
+        </a>
+  
+        <!-- Servicio 2 -->
+        <a href="#" class="service-card block bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <div class="overflow-hidden rounded-lg">
+            <img src="/images/img131.jpg" alt="Servicio 2" class="w-full h-48 object-cover rounded-lg transform hover:scale-105 transition duration-300">
+          </div>
+          <h3 class="text-xl font-bold text-red-600 mt-4 text-center">Servicio 2</h3>
+          <p class="text-gray-700 mt-2 text-center">Descripción del servicio 2.</p>
+        </a>
+  
+        <!-- Servicio 3 -->
+        <a href="#" class="service-card block bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+          <div class="overflow-hidden rounded-lg">
+            <img src="/images/img193.jpg" alt="Servicio 3" class="w-full h-48 object-cover rounded-lg transform hover:scale-105 transition duration-300">
+          </div>
+          <h3 class="text-xl font-bold text-red-600 mt-4 text-center">Servicio 3</h3>
+          <p class="text-gray-700 mt-2 text-center">Descripción del servicio 3.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="py-12" style="background-color: #231517;">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-white text-center mb-8">Mapa de Cortes de Carne Vacuno</h2>
+      <div class="relative flex justify-center">
+        <!-- Imagen principal con mapa -->
+        <img id="map-image" src="/images/despiece-mod.png" alt="Mapa de Cortes" class="w-2/3 md:w-1/2 rounded-lg" usemap="#cortesMap">
+        
+        <map name="cortesMap">
+          <area shape="poly" coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114" href="javascript:void(0);" alt="Carrilada" onclick="showCutDetails('corte1')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
+          <area shape="poly" coords="98,166,103,178,106,189,108,196,118,191,129,185,142,179,151,176,151,162,156,149,161,140,151,125,143,109,138,96,135,79,125,72,112,76,113,95,114,115,110,130,107,143" href="javascript:void(0);" alt="Pescuezo" onclick="showCutDetails('corte2')" data-original-coords="300,300,50">
+          <area shape="poly" coords="126,69,127,63,143,62,164,63,187,67,206,72,230,78,216,84,199,89,176,91,150,86" href="javascript:void(0);" alt="Morillo" onclick="showCutDetails('corte3')" data-original-coords="400,400,450,450,500,400,450,350">
+          <area shape="poly" coords="138,82,140,96,147,113,154,126,165,138,182,137,203,138,221,137,221,122,226,106,229,93,234,81,220,85,200,92,181,95,155,90" href="javascript:void(0);" alt="Corte 4" onclick="showCutDetails('corte4')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
+          <area shape="poly" coords="179,139,178,199,161,191,153,170,160,147" href="javascript:void(0);" alt="Pez" onclick="showCutDetails('corte5')" data-original-coords="300,300,50">
+          <area shape="poly" coords="107,201,111,218,122,228,137,253,156,263,179,249,178,204,162,194,152,179" href="javascript:void(0);" alt="Pecho" onclick="showCutDetails('corte6')" data-original-coords="400,400,450,450,500,400,450,350">
+          <area shape="poly" coords="183,252,208,253,210,268,204,289,201,335,195,346,185,346,185,303" href="javascript:void(0);" alt="Morcillo Anterior" onclick="showCutDetails('corte7')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
+          <area shape="poly" coords="182,250,209,250,213,244,220,240,219,217,182,204,182,231" href="javascript:void(0);" alt="Corte 8" onclick="showCutDetails('corte8')" data-original-coords="300,300,50">
+          <area shape="poly" coords="182,201,197,207,210,198,217,187,211,173,199,170,188,174,182,181" href="javascript:void(0);" alt="Corte 9" onclick="showCutDetails('corte9')" data-original-coords="400,400,450,450,500,400,450,350">
+          <area shape="poly" coords="182,176,184,140,222,140,229,164,226,184,221,197,220,214,200,207,215,195,217,179,210,169,197,168" href="javascript:void(0);" alt="Corte 10" onclick="showCutDetails('corte10')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
+          <area shape="poly" coords="223,242,236,242,249,242,247,226,237,208,225,197,223,218" href="javascript:void(0);" alt="Corte 11" onclick="showCutDetails('corte11')" data-original-coords="300,300,50">
+          <area shape="poly" coords="226,193,230,178,232,159,227,141,265,139,274,159,278,183,280,208,277,238,254,243,246,214" href="javascript:void(0);" alt="Corte 12" onclick="showCutDetails('corte3')" data-original-coords="400,400,450,450,500,400,450,350">
+          <area shape="poly" coords="225,123,230,102,240,79,287,83,303,136,268,136,226,138" href="javascript:void(0);" alt="Corte 13" onclick="showCutDetails('corte13')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
+          <area shape="poly" coords="280,238,284,206,281,169,273,141,358,137,360,183,375,225,353,239,320,256,298,254" href="javascript:void(0);" alt="Corte 14" onclick="showCutDetails('corte14')" data-original-coords="300,300,50">
+          <area shape="poly" coords="306,135,355,134,361,109,380,78,348,98,332,98,311,93,293,86" href="javascript:void(0);" alt="Corte 15" onclick="showCutDetails('corte15')" data-original-coords="400,400,450,450,500,400,450,350">
+          <area shape="poly" coords="295,79,388,62,364,85,345,95,318,92" href="javascript:void(0);" alt="Corte 16" onclick="showCutDetails('corte16')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
+          <area shape="poly" coords="362,131,365,107,381,85,392,64,426,57,442,68,458,89,428,117,411,116,401,128" href="javascript:void(0);" alt="Corte 17" onclick="showCutDetails('corte17')" data-original-coords="300,300,50">
+          <area shape="circle" coords="419,136,15" href="javascript:void(0);" alt="Corte 18" onclick="showCutDetails('corte18')" data-original-coords="400,400,450,450,500,400,450,350">
+          <area shape="poly" coords="361,137,363,169,384,170,413,160,413,153,401,147,398,133" href="javascript:void(0);" alt="Corte 19" onclick="showCutDetails('corte19')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
+          <area shape="poly" coords="366,173,373,202,382,223,396,214,411,197,414,165,391,173" href="javascript:void(0);" alt="Corte 20" onclick="showCutDetails('corte20')" data-original-coords="300,300,50">
+          <area shape="poly" coords="460,259,474,248,477,335,450,347,459,318,461,292,452,277" href="javascript:void(0);" alt="Corte 21" onclick="showCutDetails('corte21')" data-original-coords="400,400,450,450,500,400,450,350">
+          <area shape="poly" coords="389,227,405,245,449,273,460,254,471,239,461,217,427,215" href="javascript:void(0);" alt="Corte 22" onclick="showCutDetails('corte22')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
+          <area shape="poly" coords="394,221,424,212,460,211,453,170,455,147,459,132,439,131,435,150,418,156,417,182,413,199" href="javascript:void(0);" alt="Corte 23" onclick="showCutDetails('corte23')" data-original-coords="300,300,50">
+          <area shape="poly" coords="464,204,470,173,471,133,463,134,455,162" href="javascript:void(0);" alt="Corte 24" onclick="showCutDetails('corte24')" data-original-coords="400,400,450,450,500,400,450,350">
+          <area shape="poly" coords="430,119,437,129,470,129,468,108,461,92,445,103" href="javascript:void(0);" alt="Corte 25" onclick="showCutDetails('corte25')" data-original-coords="300,300,50">
+          <area shape="poly" coords="441,61,450,63,466,79,479,105,495,143,500,184,510,256,503,235,503,256,496,269,490,162,476,127,468,97" href="javascript:void(0);" alt="Corte 26" onclick="showCutDetails('corte26')" data-original-coords="400,400,450,450,500,400,450,350">
+        </map>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Modal detalles del corte -->
+  <div id="modal" class="hidden fixed inset-0 z-50 bg-black/80 flex justify-center items-center" onclick="closeModal(event)">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-11/12 relative">
+      <button id="close-button" onclick="closeModal()" class="absolute top-4 right-4 text-black text-2xl font-bold">&times;</button>
+      <img id="cut-image" src="" alt="Detalle del Corte" class="w-full h-auto mb-4 rounded-lg">
+      <table id="cut-details" class="table-auto w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-300 px-4 py-2 text-black">Especificación</th>
+            <th class="border border-gray-300 px-4 py-2 text-black">Detalle</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script>
+    const cutsData = {
+      corte1: {
+        image: "/images/cortes/cogote.jpg",
+        details: [
+          { especificacion: "Cogote", detalle: "Corte 1" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte2: {
+        image: "/images/cortes/pescuezo.jpeg",
+        details: [
+          { especificacion: "Pescuezo", detalle: "Corte 2" },
+          { especificacion: "Peso Promedio", detalle: "2 kg" },
+          { especificacion: "Preparación", detalle: "Bueno para guisar" }
+        ]
+      },
+      corte3: {
+        image: "/images/cortes/morillo.jpg",
+        details: [
+          { especificacion: "Morrillo", detalle: "Corte 3" },
+          { especificacion: "Peso Promedio", detalle: "1.2 kg" },
+          { especificacion: "Preparación", detalle: "Perfecto para estofar" }
+        ]
+      },
+      corte4: {
+        image: "/images/cortes/aguja.jpg",
+        details: [
+          { especificacion: "Aguja", detalle: "Corte 4" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte5: {
+        image: "/images/cortes/pez.webp",
+        details: [
+          { especificacion: "Pez", detalle: "Corte 5" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte6: {
+        image: "/images/cortes/pecho.jpeg",
+        details: [
+          { especificacion: "Pecho", detalle: "Corte 6" },
+          { especificacion: "Peso Promedio", detalle: "2 kg" },
+          { especificacion: "Preparación", detalle: "Bueno para guisar" }
+        ]
+      },
+      corte7: {
+        image: "/images/cortes/MORCILLO.jpg",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 7" },
+          { especificacion: "Peso Promedio", detalle: "1.2 kg" },
+          { especificacion: "Preparación", detalle: "Perfecto para estofar" }
+        ]
+      },
+      corte8: {
+        image: "/images/cortes/Brazuelo.jpg",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 8" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte9: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 9" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte10: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 10" },
+          { especificacion: "Peso Promedio", detalle: "2 kg" },
+          { especificacion: "Preparación", detalle: "Bueno para guisar" }
+        ]
+      },
+      corte11: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 11" },
+          { especificacion: "Peso Promedio", detalle: "1.2 kg" },
+          { especificacion: "Preparación", detalle: "Perfecto para estofar" }
+        ]
+      },
+      corte12: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 12" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte13: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 13" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte14: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 14" },
+          { especificacion: "Peso Promedio", detalle: "2 kg" },
+          { especificacion: "Preparación", detalle: "Bueno para guisar" }
+        ]
+      },
+      corte15: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 15" },
+          { especificacion: "Peso Promedio", detalle: "1.2 kg" },
+          { especificacion: "Preparación", detalle: "Perfecto para estofar" }
+        ]
+      },
+      corte16: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 16" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte17: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 17" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte18: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 18" },
+          { especificacion: "Peso Promedio", detalle: "2 kg" },
+          { especificacion: "Preparación", detalle: "Bueno para guisar" }
+        ]
+      },
+      corte19: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 19" },
+          { especificacion: "Peso Promedio", detalle: "1.2 kg" },
+          { especificacion: "Preparación", detalle: "Perfecto para estofar" }
+        ]
+      },
+      corte20: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 20" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte21: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 21" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte22: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 22" },
+          { especificacion: "Peso Promedio", detalle: "2 kg" },
+          { especificacion: "Preparación", detalle: "Bueno para guisar" }
+        ]
+      },
+      corte23: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 23" },
+          { especificacion: "Peso Promedio", detalle: "1.2 kg" },
+          { especificacion: "Preparación", detalle: "Perfecto para estofar" }
+        ]
+      },
+      corte24: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 24" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte25: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 25" },
+          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
+          { especificacion: "Preparación", detalle: "Ideal para asar" }
+        ]
+      },
+      corte26: {
+        image: "/images/cortes/",
+        details: [
+          { especificacion: "Nombre", detalle: "Corte 26" },
+          { especificacion: "Peso Promedio", detalle: "2 kg" },
+          { especificacion: "Preparación", detalle: "Bueno para guisar" }
+        ]
+      },
+    };
+  
+    function showCutDetails(cutId) {
+      const cut = cutsData[cutId];
+      if (cut) {
+        document.getElementById("cut-image").src = cut.image;
+        const tableBody = document.getElementById("cut-details").querySelector("tbody");
+        tableBody.innerHTML = "";
+        cut.details.forEach(detail => {
+          const row = `<tr>
+            <td class="border border-gray-300 px-4 py-2 text-black">${detail.especificacion}</td>
+            <td class="border border-gray-300 px-4 py-2 text-black">${detail.detalle}</td>
+          </tr>`;
+          tableBody.innerHTML += row;
+        });
+  
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+        document.getElementById("modal").classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+      }
+    }
+  
+    function closeModal(event) {
+      if (!event || event.target.id === "modal" || event.target.id === "close-button") {
+        document.getElementById("modal").classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+        document.body.style.paddingRight = "";
+      }
+    }
+  
+    function scaleMap() {
+      const img = document.getElementById("map-image");
+      const originalWidth = 518; 
+      const originalHeight = 367;
+      
+      const currentWidth = img.clientWidth;
+      const currentHeight = img.clientHeight;
+  
+      const widthRatio = currentWidth / originalWidth;
+      const heightRatio = currentHeight / originalHeight;
+  
+      document.querySelectorAll("map[name='cortesMap'] area").forEach(area => {
+        const coords = area.dataset.originalCoords.split(',').map(Number);
+        const newCoords = coords.map((coord, index) => 
+          index % 2 === 0 ? Math.round(coord * widthRatio) : Math.round(coord * heightRatio)
+        );
+        area.coords = newCoords.join(',');
+      });
+    }
+  
+    document.querySelectorAll("map[name='cortesMap'] area").forEach(area => {
+      area.dataset.originalCoords = area.coords;
+    });
+  
+    window.addEventListener("load", scaleMap);
+    window.addEventListener("resize", scaleMap);
+  </script>
+  
+  
+  
+  <footer class="text-white py-12" style="background-color: #9E7059; position: relative;">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="flex flex-col items-center">
+        <a href="index.html">
+          <img src="/images/logos/logo_2.3.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
+        </a>
+      </div>
+  
+      <!-- Enlaces -->
+      <div class="text-center mt-8">
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;">Enlaces</h3>
+        <nav class="space-y-4 text-3xl">
+          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Inicio</a>
+          <a href="/empresa.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Empresa</a>
+          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Servicios</a>
+          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Contacto</a>
+        </nav>
+      </div>
+  
+      <!-- Contáctanos -->
+      <div class="text-center mt-8">
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;">Contáctanos</h3>
+        <p class="text-2xl">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
+        <p class="text-2xl">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
+      
+        <!-- Redes Sociales -->
+        <div class="flex justify-center space-x-8 mt-6">
+          
+          <!-- Facebook -->
+          <a href="#" aria-label="Facebook" class="hover:opacity-80 transition duration-300">
+            <img src="/images/icons/facebook-network-communication-internet-interaction-svgrepo-com.svg" alt="Facebook" class="h-12 w-12">
+          </a>
+      
+          <!-- Instagram -->
+          <a href="#" aria-label="Instagram" class="hover:opacity-80 transition duration-300">
+            <img src="/images/icons/instagram-1-svgrepo-com.svg" alt="Instagram" class="h-12 w-12">
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="#" aria-label="Instagram" class="hover:opacity-80 transition duration-300">
+            <img src="/images/icons/linkedin-svgrepo-com.svg" alt="LinkedIn" class="h-12 w-12">
+          </a>
+      
+        </div>
+      </div>      
+    </div>
+  
+    <!-- Pie de página centrado -->
+    <div class="border-t border-gray-700 mt-8 pt-4 text-center">
+      <p class="text-xl text-white">&copy; 2025 Morenza. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  

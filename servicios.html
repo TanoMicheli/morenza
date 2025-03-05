@@ -1,0 +1,66 @@
+<!-- Galería de Imágenes -->
+<h1 id="gallery" class="mt-10 mb-5 text-center text-3xl font-bold" style="color: #BF1F2E;">
+    Galería de Imágenes
+  </h1>
+  <h3 class="mb-10 text-center text-xl" style="color: #BF1F2E;">
+    Haz clic en la imagen para ampliarla
+  </h3>
+  
+  <div class="p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 bg-[#E5DAD1]">
+    <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 1" id="img1" />
+    <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img87.jpg" alt="Img 2" id="img2" />
+    <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 3" id="img3" />
+    <!-- Más imágenes pueden agregarse aquí -->
+  </div>
+  
+  <!-- Modal para imágenes -->
+  <div id="modal" class="hidden fixed inset-0 z-50 w-screen h-screen flex justify-center items-center" onclick="closeModal(event)">
+    <!-- Fondo opaco -->
+    <div class="absolute inset-0 bg-black/50"></div>
+  
+    <!-- Imagen ampliada en el modal -->
+    <img id="modal-img" class="relative w-auto h-auto rounded-lg z-10" />
+  </div>
+  
+  <script>
+    // Obtener todas las imágenes en la cuadrícula
+    var images = document.querySelectorAll('.grid img');
+  
+    // Agregar un evento de clic a cada imagen
+    images.forEach(function (img) {
+      img.addEventListener('click', function () {
+        showModal(img.src, img.id);
+      });
+    });
+  
+    // Mostrar el modal
+    function showModal(src, id) {
+      const modalImg = document.getElementById("modal-img");
+      modalImg.src = src;
+  
+      // Ajustar tamaño de la imagen 87.jpg en el modal
+      if (id === "img2") {
+        modalImg.style.maxWidth = "85%"; // Tamaño más pequeño para img87.jpg
+      } else {
+        modalImg.style.maxWidth = "100%"; // Tamaño normal para otras imágenes
+      }
+  
+      // Desactivar el desplazamiento de la página
+      document.body.style.overflow = 'hidden';
+  
+      // Mostrar el modal
+      document.getElementById("modal").classList.remove('hidden');
+    }
+  
+    // Cerrar el modal
+    function closeModal(event) {
+      // Si se hace clic en el fondo o en el botón, cerrar el modal
+      if (!event || event.target.id === "modal" || event.target.id === "close-button") {
+        document.getElementById("modal").classList.add('hidden');
+  
+        // Restaurar el desplazamiento de la página
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+  

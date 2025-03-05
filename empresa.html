@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morenza Auténtico Sabor</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kadwa:wght@400;700&family=Kanit:ital,wght@1,300;1,700&family=Lato:ital@1&family=Montserrat:ital,wght@0,650;1,650&family=Poppins:ital,wght@1,400;1,500&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/logos/logo_sim_1.png" sizes="32x32">
+  <style>
+    @font-face {
+        font-family: 'Blauer Nue';
+        src: url('/fonts/Blauer-Nue-Regular-iF6626350c83fdf.otf') format('opentype');
+        font-weight: 500;
+      }
+      body {
+        font-family: 'Barlow', sans-serif;
+        background-color: #1e1e1e;
+      }
+      header{
+        font-family: 'Blauer Nue', sans-serif;
+      }
+      h1, h2, h3, p, a {
+        font-family: 'Bebas Neue', 'Kadwa', 'Kanit', 'Lato', 'Montserrat', 'Poppins', 'Roboto Slab', sans-serif;
+      }
+      .service-card img {
+        transition: transform 0.3s ease-in-out;
+      }
+      .service-card:hover img {
+        transform: scale(1.1);
+      }
+      .icon-facebook {
+        color: #1877F2;
+      }
+      .icon-instagram {
+        color: #C13584;
+      }
+      .icon-linkedin {
+        color: #0A66C2;
+      }
+      .cut-map img {
+        transition: transform 0.3s ease-in-out;
+      }
+      .cut-map:hover img {
+        transform: scale(1.1);
+      }
+  </style>
+</head>
+<body class="text-white">
+    <header class="text-white py-4" style="background-color: #BF1F2E;">
+      <div class="container mx-auto flex items-center justify-between">
+        <a href="index.html">
+          <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="text-black h-28">
+        </a>
+        <nav class="space-x-4 text-2xl" style="font-family: 'Blauer Nue', sans-serif;">
+          <a href="index.html" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Inicio</a>
+          <a href="/empresa.html" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Empresa</a>
+          <a href="#" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Servicios</a>
+          <a href="#" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Contacto</a>
+        </nav> 
+      </div>
+    </header>
+    <body class="overflow-hidden">
+      <!-- Hero Section -->
+      <section class="relative text-white py-20 overflow-hidden z-10" style="background-color: #ffffff;">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10">
+          <!-- Texto a la izquierda -->
+          <div class="max-w-lg text-center lg:text-left">
+            <h1 class="text-5xl font-bold mb-6 leading-tight" style="letter-spacing: 3.5px; font-family: 'Bebas Neue', sans-serif;">
+              Descubre Nuestra Galería
+            </h1>
+            <p class="text-2xl mb-8" style="letter-spacing: 1.5px;">
+              Seguimos creciendo y ampliando nuestro circuito productivo. Seleccionamos los mejores animales, despiezamos con la más moderna tecnología y distribuimos manteniendo la frescura.
+
+ 
+            </p>
+            <a href="#gallery" class="px-8 py-4 bg-green-600 text-white text-xl font-semibold rounded-lg hover:bg-green-700 transition duration-300">
+              Ver Galería
+            </a>
+          </div>
+    
+          <!-- Imagen de ejemplo -->
+          <div class="relative mt-10 lg:mt-0 lg:ml-12">
+            <img src="/images/v_223182_53684857.jpg" alt="imagen" class="rounded-lg shadow-lg w-full max-w-md">
+          </div>
+        </div>
+      </section>
+    
+      <!-- Galería de Imágenes -->
+      <h1 id="gallery" class="mt-10 mb-5 text-center text-3xl font-bold" style="color: #BF1F2E; letter-spacing: 2.5px; background-color: #E5DAD1">
+        Galería de Imágenes
+      </h1>
+      <h3 class="mb-10 text-center text-xl" style="color: #BF1F2E; letter-spacing: 2.5px; background-color: #E5DAD1">
+        Haz clic en la imagen para ampliarla
+      </h3>
+    
+      <div class="p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5" style="background-color:#E5DAD1">
+        <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 1" id="img1" />
+        <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img87.jpg" alt="Img 2" id="img2" />
+        <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 3" id="img3" />
+      </div>
+    
+      <!-- Modal para imágenes -->
+      <div id="modal" class="hidden fixed inset-0 z-50 w-screen h-screen flex justify-center items-center" onclick="closeModal(event)">
+        <!-- Imagen ampliada en el modal -->
+        <div class="relative bg-gray-700 p-8 rounded-lg shadow-lg max-w-5xl">
+          <button id="close-button" class="absolute top-2 right-2 text-black text-2xl font-bold" onclick="closeModal()">×</button>
+          <img id="modal-img" class="w-full h-auto rounded-lg" />
+        </div>
+      </div>
+    
+      <script>
+        // Obtener todas las imágenes en la cuadrícula
+        var images = document.querySelectorAll('.grid img');
+    
+        // Agregar un evento de clic a cada imagen
+        images.forEach(function (img) {
+          img.addEventListener('click', function () {
+            showModal(img.src, img.id);
+          });
+        });
+    
+        // Mostrar el modal
+        function showModal(src, id) {
+          const modalImg = document.getElementById("modal-img");
+          modalImg.src = src;
+    
+          // Ajustar tamaño de la imagen 87.jpg en el modal
+          if (id === "img2") {
+            modalImg.style.maxWidth = "85%"; // Tamaño más pequeño para img87.jpg
+          } else {
+            modalImg.style.maxWidth = "100%"; // Tamaño normal para otras imágenes
+          }
+    
+          // Desactivar el desplazamiento de la página
+          document.body.style.overflow = 'hidden';
+    
+          // Mostrar el modal
+          document.getElementById("modal").classList.remove('hidden');
+        }
+    
+        // Cerrar el modal
+        function closeModal(event) {
+          // Si se hace clic en el fondo o en el botón, cerrar el modal
+          if (!event || event.target.id === "modal" || event.target.id === "close-button") {
+            document.getElementById("modal").classList.add('hidden');
+    
+            // Restaurar el desplazamiento de la página
+            document.body.style.overflow = '';
+          }
+        }
+      </script>
+    </body>
+    
+    
+    
+    
+    
+    
+      
+
+      
+      
+      
