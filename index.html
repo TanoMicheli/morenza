@@ -55,29 +55,43 @@
         <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="text-black h-28">
       </a>
       <nav class="space-x-4 text-2xl" style="font-family: 'Blauer Nue', sans-serif;">
-        <a href="/index.html" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Inicio</a>
-        <a href="/empresa.html" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Empresa</a>
-        <a href="#" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Servicios</a>
-        <a href="#" class="text-white" style="letter-spacing: 2.5px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Contacto</a>
+        <a href="/index.html" class="text-white nav-link" data-key="inicio" style="letter-spacing: 2.5px; transition: color 0.3s;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Inicio</a>
+        <a href="/empresa.html" class="text-white nav-link" data-key="empresa" style="letter-spacing: 2.5px; transition: color 0.3s;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Empresa</a>
+        <a href="#" class="text-white nav-link" data-key="servicios" style="letter-spacing: 2.5px; transition: color 0.3s;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Servicios</a>
+        <a href="#" class="text-white nav-link" data-key="contacto" style="letter-spacing: 2.5px; transition: color 0.3s;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Contacto</a>
       </nav> 
+      <div class="flex items-center space-x-4">
+        <!-- Bandera Argentina -->
+        <img src="/images/banderas/Bandera_nacional_de_España.png" alt="Español" class="h-10 cursor-pointer" onclick="cambiarIdioma('es')">
+        <!-- Bandera China -->
+        <img src="/images/banderas/Flag_of_China.png" alt="Chino" class="h-10 cursor-pointer" onclick="cambiarIdioma('zh')">
+      </div>
     </div>
   </header>
 
   <section class="relative h-screen bg-black bg-center" style="background-image: url('/images/img192.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
       <div class="text-center">
-        <h1 class="text-5xl font-bold text-red-600" style="letter-spacing: 3px;">Bienvenidos a Nuestro Sitio</h1>
-        <p class="mt-4 text-4xl font-semibold text-white" style="letter-spacing: 8px;">AUTÉNTICO SABOR</p>
-        
+        <h1 class="text-5xl font-bold text-red-600 section-text" data-key="bienvenidos" style="letter-spacing: 3px;">
+          Bienvenidos a Nuestro Sitio
+        </h1>
+        <p class="mt-4 text-4xl font-semibold text-white section-text" data-key="sabor" style="letter-spacing: 8px;">
+          AUTÉNTICO SABOR
+        </p>
+  
         <!-- Línea horizontal más gruesa -->
         <div class="my-4 border-t-4 border-white w-1/6 mx-auto"></div>
-        
-        <h2 class="text-2xl font-semibold text-white" style="letter-spacing: 2.5px;">100% ARGENTINO</h2>
-        
-        <a href="#" class="mt-6 inline-block bg-red-600 text-white px-8 py-4 text-xl rounded hover:bg-red-400" style="letter-spacing: 2.5px;">Conócenos</a>
+  
+        <h2 class="text-2xl font-semibold text-white section-text" data-key="argentino" style="letter-spacing: 2.5px;">
+          100% ARGENTINO
+        </h2>
+  
+        <a href="#" class="mt-6 inline-block bg-red-600 text-white px-8 py-4 text-xl rounded hover:bg-red-400 section-text" data-key="conocenos" style="letter-spacing: 2.5px;">
+          Conócenos
+        </a>
       </div>
     </div>
-  </section>  
+  </section> 
 
   <section class="py-12 bg-white" style="background-color: rgb(158, 112, 89);">
     <div class="container mx-auto">
@@ -448,7 +462,39 @@
     window.addEventListener("load", scaleMap);
     window.addEventListener("resize", scaleMap);
   </script>
+
+  <!--Script Idiomas-->
+  <script>
+    const traducciones = {
+      es: {
+        inicio: "Inicio",
+        empresa: "Empresa",
+        servicios: "Servicios",
+        contacto: "Contacto",
+        bienvenidos: "Bienvenidos a Nuestro Sitio",
+        sabor: "AUTÉNTICO SABOR",
+        argentino: "100% ARGENTINO",
+        conocenos: "Conócenos"
+      },
+      zh: {
+        inicio: "首页",
+        empresa: "公司",
+        servicios: "服务",
+        contacto: "联系方式",
+        bienvenidos: "欢迎来到我们的网站",
+        sabor: "正宗的味道",
+        argentino: "100% 阿根廷",
+        conocenos: "了解我们"
+      }
+    };
   
+    function cambiarIdioma(idioma) {
+      document.querySelectorAll(".nav-link, .section-text").forEach(el => {
+        const key = el.getAttribute("data-key");
+        el.textContent = traducciones[idioma][key];
+      });
+    }
+  </script>  
   
   
   <footer class="text-white py-12" style="background-color: #9E7059; position: relative;">
