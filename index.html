@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kadwa:wght@400;700&family=Kanit:ital,wght@1,300;1,700&family=Lato:ital@1&family=Montserrat:ital,wght@0,650;1,650&family=Poppins:ital,wght@1,400;1,500&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
   <link rel="icon" href="/images/logos/logo_sim_1.png" sizes="32x32">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
   <style>
     @font-face {
       font-family: 'Blauer Nue';
@@ -17,7 +18,7 @@
     }
     body {
       font-family: 'Barlow', sans-serif;
-      background-color: #1e1e1e;
+      background-color: #BF1F2E;
     }
     header{
       font-family: 'Blauer Nue', sans-serif;
@@ -49,44 +50,48 @@
   </style>
 </head>
 <body class="text-white">
-  <header class="text-white py-4" style="background-color: #BF1F2E;">
+  <header class="text-white py-4 bg-[#BF1F2E]">
     <div class="container mx-auto flex items-center justify-between">
       <a href="index.html">
-        <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="text-black h-28">
+        <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="h-28">
       </a>
-      <nav class="space-x-4 text-2xl" style="font-family: 'Blauer Nue', sans-serif;">
-        <a href="/index.html" class="text-white nav-link" data-key="inicio" style="letter-spacing: 2.5px; transition: color 0.3s;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Inicio</a>
-        <a href="/empresa.html" class="text-white nav-link" data-key="empresa" style="letter-spacing: 2.5px; transition: color 0.3s;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Empresa</a>
-        <a href="#" class="text-white nav-link" data-key="servicios" style="letter-spacing: 2.5px; transition: color 0.3s;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Servicios</a>
-        <a href="#" class="text-white nav-link" data-key="contacto" style="letter-spacing: 2.5px; transition: color 0.3s;" onmouseover="this.style.color='#9E7059';" onmouseout="this.style.color='white';">Contacto</a>
+      <nav class="space-x-4 text-2xl font-['Blauer Nue']">
+        <a href="/index.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="inicio">Inicio</a>
+        <a href="/empresa.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="empresa">Empresa</a>
+        <a href="#" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="servicios">Servicios</a>
+        <a href="#" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
       </nav> 
-      <div class="flex items-center space-x-4">
-        <!-- Bandera Argentina -->
-        <img src="/images/banderas/Bandera_nacional_de_España.png" alt="Español" class="h-10 cursor-pointer" onclick="cambiarIdioma('es')">
-        <!-- Bandera China -->
-        <img src="/images/banderas/Flag_of_China.png" alt="Chino" class="h-10 cursor-pointer" onclick="cambiarIdioma('zh')">
+      <div class="flex items-center space-x-2">
+        <button id="language-button" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
+          <svg class="w-5 h-5 rounded-full me-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
+          <span id="language-text">English (US)</span>
+        </button>
+        <!-- Dropdown -->
+        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
+          <ul class="py-2 font-medium">
+            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es">🇪🇸 Español (ES)</a></li>
+            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="en">🇺🇸 English (US)</a></li>
+            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="zh">🇨🇳 中文 (ZH)</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
 
-  <section class="relative h-screen bg-black bg-center" style="background-image: url('/images/img192.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <section class="relative h-screen bg-black bg-cover bg-center" style="background-image: url('/images/img192.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
       <div class="text-center">
-        <h1 class="text-5xl font-bold text-red-600 section-text" data-key="bienvenidos" style="letter-spacing: 3px;">
+        <h1 class="text-5xl font-bold text-red-600 section-text tracking-widest" data-key="bienvenidos">
           Bienvenidos a Nuestro Sitio
         </h1>
-        <p class="mt-4 text-4xl font-semibold text-white section-text" data-key="sabor" style="letter-spacing: 8px;">
+        <p class="mt-4 text-4xl font-semibold text-white section-text tracking-widest" data-key="sabor">
           AUTÉNTICO SABOR
         </p>
-  
-        <!-- Línea horizontal más gruesa -->
         <div class="my-4 border-t-4 border-white w-1/6 mx-auto"></div>
-  
-        <h2 class="text-2xl font-semibold text-white section-text" data-key="argentino" style="letter-spacing: 2.5px;">
+        <h2 class="text-2xl font-semibold text-white section-text tracking-wide" data-key="argentino">
           100% ARGENTINO
         </h2>
-  
-        <a href="#" class="mt-6 inline-block bg-red-600 text-white px-8 py-4 text-xl rounded hover:bg-red-400 section-text" data-key="conocenos" style="letter-spacing: 2.5px;">
+        <a href="#" class="mt-6 inline-block bg-red-600 text-white px-8 py-4 text-xl rounded hover:bg-red-400 section-text tracking-widest" data-key="conocenos">
           Conócenos
         </a>
       </div>
@@ -405,7 +410,7 @@
         ]
       },
     };
-  
+  /* Modal Imagenes */
     function showCutDetails(cutId) {
       const cut = cutsData[cutId];
       if (cut) {
@@ -476,6 +481,16 @@
         argentino: "100% ARGENTINO",
         conocenos: "Conócenos"
       },
+      en: {
+        inicio: "Home",
+        empresa: "Company",
+        servicios: "Services",
+        contacto: "Contact",
+        bienvenidos: "Welcome to Our Site",
+        sabor: "AUTHENTIC FLAVOR",
+        argentino: "100% ARGENTINIAN",
+        conocenos: "Get to Know Us"
+      },
       zh: {
         inicio: "首页",
         empresa: "公司",
@@ -488,13 +503,23 @@
       }
     };
   
-    function cambiarIdioma(idioma) {
-      document.querySelectorAll(".nav-link, .section-text").forEach(el => {
-        const key = el.getAttribute("data-key");
-        el.textContent = traducciones[idioma][key];
+    document.querySelectorAll(".language-option").forEach(option => {
+      option.addEventListener("click", (e) => {
+        e.preventDefault();
+        const idioma = option.getAttribute("data-lang");
+        document.querySelectorAll(".nav-link, .section-text").forEach(el => {
+          const key = el.getAttribute("data-key");
+          if (traducciones[idioma][key]) {
+            el.textContent = traducciones[idioma][key];
+          }
+        });
+        document.getElementById("language-text").textContent = option.textContent.trim();
+        document.getElementById("language-dropdown-menu").classList.add("hidden");
       });
-    }
-  </script>  
+    });
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   
   
   <footer class="text-white py-12" style="background-color: #9E7059; position: relative;">
