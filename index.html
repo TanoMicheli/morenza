@@ -58,20 +58,21 @@
       <nav class="space-x-4 text-2xl font-['Blauer Nue']">
         <a href="/index.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="inicio">Inicio</a>
         <a href="/empresa.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="empresa">Empresa</a>
-        <a href="#" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="servicios">Servicios</a>
-        <a href="#" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
+        <a href="/servicios.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="servicios">Servicios</a>
+        <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
       </nav> 
       <div class="flex items-center space-x-2">
+        <!-- Botón de idioma -->
         <button id="language-button" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
-          <svg class="w-5 h-5 rounded-full me-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
+          <img id="language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
           <span id="language-text">English (US)</span>
         </button>
         <!-- Dropdown -->
         <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
           <ul class="py-2 font-medium">
-            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es">🇪🇸 Español (ES)</a></li>
-            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="en">🇺🇸 English (US)</a></li>
-            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="zh">🇨🇳 中文 (ZH)</a></li>
+            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es" data-flag="/images/flags/es.png">🇪🇸 Español (ES)</a></li>
+            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="en" data-flag="/images/flags/us.png">🇺🇸 English (US)</a></li>
+            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="zh" data-flag="/images/flags/zh.png">🇨🇳 中文 (ZH)</a></li>
           </ul>
         </div>
       </div>
@@ -479,7 +480,9 @@
         bienvenidos: "Bienvenidos a Nuestro Sitio",
         sabor: "AUTÉNTICO SABOR",
         argentino: "100% ARGENTINO",
-        conocenos: "Conócenos"
+        conocenos: "Conócenos",
+        idioma: "Español (ES)",
+        flag: "/images/banderas/españa.png"
       },
       en: {
         inicio: "Home",
@@ -489,7 +492,9 @@
         bienvenidos: "Welcome to Our Site",
         sabor: "AUTHENTIC FLAVOR",
         argentino: "100% ARGENTINIAN",
-        conocenos: "Get to Know Us"
+        conocenos: "Get to Know Us",
+        idioma: "English (US)",
+        flag: "/images/banderas/eeuu.png"
       },
       zh: {
         inicio: "首页",
@@ -499,23 +504,45 @@
         bienvenidos: "欢迎来到我们的网站",
         sabor: "正宗的味道",
         argentino: "100% 阿根廷",
-        conocenos: "了解我们"
+        conocenos: "了解我们",
+        idioma: "中文 (ZH)",
+        flag: "/images/banderas/china.png"
       }
     };
-  
+    
+    function cambiarIdioma(idioma) {
+      if (!traducciones[idioma]) return;
+    
+      // Cambia los textos de la navegación y secciones
+      document.querySelectorAll(".nav-link, .section-text").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (traducciones[idioma][key]) {
+          el.textContent = traducciones[idioma][key];
+        }
+      });
+    
+      // Actualiza el texto y la bandera en el botón de selección de idioma
+      document.getElementById("language-text").textContent = traducciones[idioma].idioma;
+      document.getElementById("language-flag").src = traducciones[idioma].flag;
+    
+      // Guarda la selección en localStorage
+      localStorage.setItem("selectedLanguage", idioma);
+    }
+    
+    // Agregar eventos a las opciones de idioma
     document.querySelectorAll(".language-option").forEach(option => {
       option.addEventListener("click", (e) => {
         e.preventDefault();
         const idioma = option.getAttribute("data-lang");
-        document.querySelectorAll(".nav-link, .section-text").forEach(el => {
-          const key = el.getAttribute("data-key");
-          if (traducciones[idioma][key]) {
-            el.textContent = traducciones[idioma][key];
-          }
-        });
-        document.getElementById("language-text").textContent = option.textContent.trim();
+        cambiarIdioma(idioma);
         document.getElementById("language-dropdown-menu").classList.add("hidden");
       });
+    });
+    
+    // Cargar idioma guardado al iniciar la página
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("selectedLanguage") || "en";
+      cambiarIdioma(savedLang);
     });
   </script>
   
