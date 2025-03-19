@@ -92,7 +92,7 @@
         <h2 class="text-2xl font-semibold text-white section-text tracking-wide" data-key="argentino">
           100% ARGENTINO
         </h2>
-        <a href="#" class="mt-6 inline-block bg-red-600 text-white px-8 py-4 text-xl rounded hover:bg-red-400 section-text tracking-widest" data-key="conocenos">
+        <a href="empresa.html" class="mt-6 inline-block bg-red-600 text-white px-8 py-4 text-xl rounded hover:bg-red-400 section-text tracking-widest" data-key="conocenos">
           Conócenos
         </a>
       </div>
@@ -101,8 +101,8 @@
 
   <section class="py-12 bg-white" style="background-color: rgb(158, 112, 89);">
     <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-8" style="letter-spacing: 2.7px; color: #E5DAD1">Sobre Nosotros</h2>
-      <p class="text-2xl text-gray-900 text-center max-w-3xl mx-auto" style="color:#231517">
+      <h2 class="text-4xl font-bold text-center mb-8" style="letter-spacing: 2.7px; color: #E5DAD1" data-key="titulo">Sobre Nosotros</h2>
+      <p class="text-2xl text-gray-900 text-center max-w-3xl mx-auto" style="color:#231517" data-key="texto">
         Somos una empresa comprometida con ofrecer calidad premium, desde el frigorifico hasta tu mesa.
       </p>
     </div>
@@ -481,6 +481,8 @@
         sabor: "AUTÉNTICO SABOR",
         argentino: "100% ARGENTINO",
         conocenos: "Conócenos",
+        titulo: "Sobre Nosotros",
+        texto: "Somos una empresa comprometida con ofrecer calidad premium, desde el frigorífico hasta tu mesa.",
         idioma: "Español (ES)",
         flag: "/images/banderas/españa.png"
       },
@@ -492,7 +494,8 @@
         bienvenidos: "Welcome to Our Site",
         sabor: "AUTHENTIC FLAVOR",
         argentino: "100% ARGENTINIAN",
-        conocenos: "Get to Know Us",
+        titulo: "Get to Know Us",
+        texto: "We are a company committed to offering premium quality, from the fridge to your table.",
         idioma: "English (US)",
         flag: "/images/banderas/eeuu.png"
       },
@@ -505,6 +508,8 @@
         sabor: "正宗的味道",
         argentino: "100% 阿根廷",
         conocenos: "了解我们",
+        titulo: "关于我们",
+        texto: "我们是一家致力于提供优质产品的公司，从冷藏到您的餐桌。",
         idioma: "中文 (ZH)",
         flag: "/images/banderas/china.png"
       }
@@ -514,7 +519,7 @@
       if (!traducciones[idioma]) return;
     
       // Cambia los textos de la navegación y secciones
-      document.querySelectorAll(".nav-link, .section-text").forEach(el => {
+      document.querySelectorAll(".nav-link, .section-text, [data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
         if (traducciones[idioma][key]) {
           el.textContent = traducciones[idioma][key];
@@ -561,16 +566,16 @@
       <div class="text-center mt-8">
         <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;">Enlaces</h3>
         <nav class="space-y-4 text-3xl">
-          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Inicio</a>
-          <a href="/empresa.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Empresa</a>
-          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Servicios</a>
-          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Contacto</a>
+          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="inicio" >Inicio</a>
+          <a href="/empresa.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="empresa">Empresa</a>
+          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="servicios">Servicios</a>
+          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="contacto">Contacto</a>
         </nav>
       </div>
   
       <!-- Contáctanos -->
       <div class="text-center mt-8">
-        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;">Contáctanos</h3>
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;" data-key="contáctanos">Contáctanos</h3>
         <p class="text-2xl">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
         <p class="text-2xl">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
       
