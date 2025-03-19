@@ -483,6 +483,10 @@
         conocenos: "Conócenos",
         titulo: "Sobre Nosotros",
         texto: "Somos una empresa comprometida con ofrecer calidad premium, desde el frigorífico hasta tu mesa.",
+        enlaces: "Enlaces",
+        contactanos: "Contáctanos",
+        telefono: 'Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a>',
+        correo: 'Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a>',
         idioma: "Español (ES)",
         flag: "/images/banderas/españa.png"
       },
@@ -496,6 +500,10 @@
         argentino: "100% ARGENTINIAN",
         titulo: "Get to Know Us",
         texto: "We are a company committed to offering premium quality, from the fridge to your table.",
+        enlaces: "Links",
+        contactanos: "Contact Us",
+        telefono: 'Phone: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a>',
+        correo: 'Email: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a>',
         idioma: "English (US)",
         flag: "/images/banderas/eeuu.png"
       },
@@ -510,6 +518,10 @@
         conocenos: "了解我们",
         titulo: "关于我们",
         texto: "我们是一家致力于提供优质产品的公司，从冷藏到您的餐桌。",
+        enlaces: "链接",
+        contactanos: "联系我们",
+        telefono: '电话: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a>',
+        correo: '电子邮件: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a>',
         idioma: "中文 (ZH)",
         flag: "/images/banderas/china.png"
       }
@@ -522,7 +534,7 @@
       document.querySelectorAll(".nav-link, .section-text, [data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
         if (traducciones[idioma][key]) {
-          el.textContent = traducciones[idioma][key];
+          el.innerHTML = traducciones[idioma][key];
         }
       });
     
@@ -558,26 +570,26 @@
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="flex flex-col items-center">
         <a href="index.html">
-          <img src="/images/logos/logo_2.3.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
+          <img src="/images/logos/logo_1.3.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
         </a>
       </div>
   
       <!-- Enlaces -->
       <div class="text-center mt-8">
-        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;">Enlaces</h3>
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;" data-key="enlaces">Enlaces</h3>
         <nav class="space-y-4 text-3xl">
-          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="inicio" >Inicio</a>
-          <a href="/empresa.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="empresa">Empresa</a>
-          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="servicios">Servicios</a>
-          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="contacto">Contacto</a>
+          <a href="index.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="inicio" >Inicio</a>
+          <a href="empresa.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="empresa">Empresa</a>
+          <a href="servicios.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="servicios">Servicios</a>
+          <a href="contacto.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="contacto">Contacto</a>
         </nav>
       </div>
   
       <!-- Contáctanos -->
       <div class="text-center mt-8">
-        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;" data-key="contáctanos">Contáctanos</h3>
-        <p class="text-2xl">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
-        <p class="text-2xl">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;" data-key="contactanos">Contáctanos</h3>
+        <p class="text-2xl" data-key="telefono">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
+        <p class="text-2xl" data-key="correo">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
       
         <!-- Redes Sociales -->
         <div class="flex justify-center space-x-8 mt-6">

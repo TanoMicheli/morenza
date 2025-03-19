@@ -81,32 +81,32 @@
 
   <!--Formulario de Contacto-->
   <section class="flex flex-col items-center justify-center min-h-screen bg-gray-100" style="background-color: #E5DAD1;">
-    <h1 class="text-5xl font-bold mb-8" style="color: #BF1F2E; letter-spacing: 2px;">Contáctanos</h1>
+    <h1 class="text-5xl font-bold mb-8" style="color: #BF1F2E; letter-spacing: 2px;" data-key="contactanos">Contáctanos</h1>
     <div class="w-full max-w-2xl p-8 bg-white rounded-lg shadow-md">
-        <h2 class="text-3xl font-semibold text-center mb-6 text-gray-900" style="letter-spacing: 2px;">Escríbenos un mensaje</h2>
+        <h2 class="text-3xl font-semibold text-center mb-6 text-gray-900" style="letter-spacing: 2px;" data-key="escribenos">Escríbenos un mensaje</h2>
         <form id="contactForm">
             <div class="mb-6">
-                <label class="block text-lg font-medium text-gray-900" for="name">Nombre</label>
-                <input id="name" type="text" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" placeholder="Tu nombre">
-                <p class="text-red-500 text-sm hidden" id="nameError">Este campo es obligatorio</p>
+                <label class="block text-lg font-medium text-gray-900" for="name" data-key="nombre">Nombre</label>
+                <input id="name" type="text" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" placeholder="Tu nombre" data-key="placeholder_nombre">
+                <p class="text-red-500 text-sm hidden" id="nameError" data-key="error_nombre">Este campo es obligatorio</p>
             </div>
             <div class="mb-6">
-                <label class="block text-lg font-medium text-gray-900" for="email">Correo Electrónico</label>
-                <input id="email" type="email" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" placeholder="correo@ejemplo.com">
-                <p class="text-red-500 text-sm hidden" id="emailError">Ingrese un correo válido</p>
+                <label class="block text-lg font-medium text-gray-900" for="email" data-key="email">Correo Electrónico</label>
+                <input id="email" type="email" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" placeholder="correo@ejemplo.com" data-key="placeholder_correo">
+                <p class="text-red-500 text-sm hidden" id="emailError" data-key="error_correo">Ingrese un correo válido</p>
             </div>
             <div class="mb-6">
-                <label class="block text-lg font-medium text-gray-900" for="subject">Asunto</label>
-                <input id="subject" type="text" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" placeholder="Asunto">
-                <p class="text-red-500 text-sm hidden" id="subjectError">Este campo es obligatorio</p>
+                <label class="block text-lg font-medium text-gray-900" for="subject" data-key="asunto">Asunto</label>
+                <input id="subject" type="text" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" placeholder="Asunto" data-key="placeholder_asunto">
+                <p class="text-red-500 text-sm hidden" id="subjectError" data-key="error_asunto">Este campo es obligatorio</p>
             </div>
             <div class="mb-6">
-                <label class="block text-lg font-medium text-gray-900" for="message">Mensaje</label>
-                <textarea id="message" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" rows="6" placeholder="Escribe tu mensaje"></textarea>
-                <p class="text-red-500 text-sm hidden" id="messageError">Este campo es obligatorio</p>
+                <label class="block text-lg font-medium text-gray-900" for="message" data-key="mensaje">Mensaje</label>
+                <textarea id="message" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" rows="6" placeholder="Escribe tu mensaje" data-key="placeholder_mensaje"></textarea>
+                <p class="text-red-500 text-sm hidden" id="messageError" data-key="error_mensaje">Este campo es obligatorio</p>
             </div>
             <button type="submit" class="w-full p-3 bg-green-500 text-white rounded-lg flex justify-center items-center hover:bg-green-600 focus:ring-4 focus:ring-green-300 text-lg">
-                <span id="buttonText">Enviar Mensaje</span>
+                <span id="buttonText" data-key="enviar">Enviar Mensaje</span>
                 <svg id="loader" class="w-6 h-6 ml-2 hidden animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
@@ -179,10 +179,24 @@
         empresa: "Empresa",
         servicios: "Servicios",
         contacto: "Contacto",
-        bienvenidos: "Bienvenidos a Nuestro Sitio",
-        sabor: "AUTÉNTICO SABOR",
-        argentino: "100% ARGENTINO",
-        conocenos: "Conócenos",
+        contactanos: "Contáctanos",
+        escribenos: "Escríbenos un mensaje",
+        nombre: "Nombre",
+        placeholder_nombre: "Tu nombre",
+        error_nombre: "Este campo es obligatorio",
+        email: "Correo Electrónico",
+        placeholder_correo: "correo@ejemplo.com",
+        error_correo: "Ingrese un correo válido",
+        asunto: "Asunto",
+        placeholder_asunto: "Asunto",
+        error_asunto: "Este campo es obligatorio",
+        mensaje: "Mensaje",
+        placeholder_mensaje: "Escribe tu mensaje",
+        error_mensaje: "Este campo es obligatorio",
+        enviar: "Enviar Mensaje",
+        enlaces: "Enlaces",
+        telefono: 'Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a>',
+        correo: 'Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a>',
         idioma: "Español (ES)",
         flag: "/images/banderas/españa.png"
       },
@@ -191,10 +205,24 @@
         empresa: "Company",
         servicios: "Services",
         contacto: "Contact",
-        bienvenidos: "Welcome to Our Site",
-        sabor: "AUTHENTIC FLAVOR",
-        argentino: "100% ARGENTINIAN",
-        conocenos: "Get to Know Us",
+        contactanos: "Contact Us",
+        escribenos: "Write us a message",
+        nombre: "Name",
+        placeholder_nombre: "Your name",
+        error_nombre: "This field is required",
+        email: "Email",
+        placeholder_correo: "email@example.com",
+        error_correo: "Enter a valid email",
+        asunto: "Subject",
+        placeholder_asunto: "Subject",
+        error_asunto: "This field is required",
+        mensaje: "Message",
+        placeholder_mensaje: "Write your message",
+        error_mensaje: "This field is required",
+        enviar: "Send Message",
+        enlaces: "Links",
+        telefono: 'Phone: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a>',
+        correo: 'Email: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a>',
         idioma: "English (US)",
         flag: "/images/banderas/eeuu.png"
       },
@@ -203,10 +231,24 @@
         empresa: "公司",
         servicios: "服务",
         contacto: "联系方式",
-        bienvenidos: "欢迎来到我们的网站",
-        sabor: "正宗的味道",
-        argentino: "100% 阿根廷",
-        conocenos: "了解我们",
+        contactanos: "联系我们",
+        escribenos: "给我们留言",
+        nombre: "姓名",
+        placeholder_nombre: "你的名字",
+        error_nombre: "此字段为必填项",
+        email: "电子邮件",
+        placeholder_correo: "email@example.com",
+        error_correo: "请输入有效的电子邮件",
+        asunto: "主题",
+        placeholder_asunto: "主题",
+        error_asunto: "此字段为必填项",
+        mensaje: "留言",
+        placeholder_mensaje: "写下你的留言",
+        error_mensaje: "此字段为必填项",
+        enviar: "发送消息",
+        enlaces: "链接",
+        telefono: '电话: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a>',
+        correo: '电子邮件: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a>',
         idioma: "中文 (ZH)",
         flag: "/images/banderas/china.png"
       }
@@ -216,10 +258,10 @@
       if (!traducciones[idioma]) return;
     
       // Cambia los textos de la navegación y secciones
-      document.querySelectorAll(".nav-link, .section-text").forEach(el => {
+      document.querySelectorAll(".nav-link, .section-text, [data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
         if (traducciones[idioma][key]) {
-          el.textContent = traducciones[idioma][key];
+          el.innerHTML = traducciones[idioma][key];
         }
       });
     
@@ -255,26 +297,26 @@
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="flex flex-col items-center">
         <a href="index.html">
-          <img src="/images/logos/logo_2.3.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
+          <img src="/images/logos/logo_1.3.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
         </a>
       </div>
   
       <!-- Enlaces -->
       <div class="text-center mt-8">
-        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;">Enlaces</h3>
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;" data-key="enlaces">Enlaces</h3>
         <nav class="space-y-4 text-3xl">
-          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Inicio</a>
-          <a href="/empresa.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Empresa</a>
-          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Servicios</a>
-          <a href="#" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;">Contacto</a>
+          <a href="index.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="inicio" >Inicio</a>
+          <a href="empresa.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="empresa">Empresa</a>
+          <a href="servicios.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="servicios">Servicios</a>
+          <a href="contacto.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="contacto">Contacto</a>
         </nav>
       </div>
   
       <!-- Contáctanos -->
       <div class="text-center mt-8">
-        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;">Contáctanos</h3>
-        <p class="text-2xl">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
-        <p class="text-2xl">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;" data-key="contactanos">Contáctanos</h3>
+        <p class="text-2xl" data-key="telefono">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
+        <p class="text-2xl" data-key="correo">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
       
         <!-- Redes Sociales -->
         <div class="flex justify-center space-x-8 mt-6">
@@ -295,7 +337,7 @@
           </a>
       
         </div>
-      </div>      
+      </div>        
     </div>
   
     <!-- Pie de página centrado -->
