@@ -184,21 +184,22 @@
   </section>
   
   <!-- Modal detalles del corte -->
-  <div id="modal" class="hidden fixed inset-0 z-50 bg-black/80 flex justify-center items-center" onclick="closeModal(event)">
-    <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-11/12 relative">
+<!-- Modal con animación -->
+<div id="modal" class="fixed inset-0 z-50 bg-black/80 flex justify-center items-center opacity-0 scale-90 transition-all duration-300 hidden" onclick="closeModal(event)">
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-11/12 relative transition-all duration-300">
       <button id="close-button" onclick="closeModal()" class="absolute top-4 right-4 text-black text-2xl font-bold">&times;</button>
       <img id="cut-image" src="" alt="Detalle del Corte" class="w-full h-auto mb-4 rounded-lg">
       <table id="cut-details" class="table-auto w-full border-collapse border border-gray-300">
-        <thead>
-          <tr class="bg-gray-200">
-            <th class="border border-gray-300 px-4 py-2 text-black">Especificación</th>
-            <th class="border border-gray-300 px-4 py-2 text-black">Detalle</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
+          <thead>
+              <tr class="bg-gray-200">
+                  <th class="border border-gray-300 px-4 py-2 text-black">Especificación</th>
+                  <th class="border border-gray-300 px-4 py-2 text-black">Detalle</th>
+              </tr>
+          </thead>
+          <tbody></tbody>
       </table>
-    </div>
   </div>
+</div>
   
   <script>
     const cutsData = {
@@ -411,62 +412,76 @@
         ]
       },
     };
-  /* Modal Imagenes */
-    function showCutDetails(cutId) {
-      const cut = cutsData[cutId];
-      if (cut) {
-        document.getElementById("cut-image").src = cut.image;
-        const tableBody = document.getElementById("cut-details").querySelector("tbody");
-        tableBody.innerHTML = "";
-        cut.details.forEach(detail => {
-          const row = `<tr>
-            <td class="border border-gray-300 px-4 py-2 text-black">${detail.especificacion}</td>
-            <td class="border border-gray-300 px-4 py-2 text-black">${detail.detalle}</td>
-          </tr>`;
-          tableBody.innerHTML += row;
-        });
-  
-        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-        document.body.style.paddingRight = `${scrollbarWidth}px`;
-        document.getElementById("modal").classList.remove("hidden");
-        document.body.classList.add("overflow-hidden");
-      }
-    }
-  
-    function closeModal(event) {
-      if (!event || event.target.id === "modal" || event.target.id === "close-button") {
-        document.getElementById("modal").classList.add("hidden");
-        document.body.classList.remove("overflow-hidden");
-        document.body.style.paddingRight = "";
-      }
-    }
-  
-    function scaleMap() {
-      const img = document.getElementById("map-image");
-      const originalWidth = 518; 
-      const originalHeight = 367;
-      
-      const currentWidth = img.clientWidth;
-      const currentHeight = img.clientHeight;
-  
-      const widthRatio = currentWidth / originalWidth;
-      const heightRatio = currentHeight / originalHeight;
-  
-      document.querySelectorAll("map[name='cortesMap'] area").forEach(area => {
-        const coords = area.dataset.originalCoords.split(',').map(Number);
-        const newCoords = coords.map((coord, index) => 
-          index % 2 === 0 ? Math.round(coord * widthRatio) : Math.round(coord * heightRatio)
-        );
-        area.coords = newCoords.join(',');
-      });
-    }
-  
-    document.querySelectorAll("map[name='cortesMap'] area").forEach(area => {
-      area.dataset.originalCoords = area.coords;
+/* Modal Imagenes */
+function showCutDetails(cutId) {
+  const cut = cutsData[cutId];
+  if (cut) {
+    document.getElementById("cut-image").src = cut.image;
+    const tableBody = document.getElementById("cut-details").querySelector("tbody");
+    tableBody.innerHTML = "";
+    cut.details.forEach(detail => {
+      const row = `<tr>
+        <td class="border border-gray-300 px-4 py-2 text-black">${detail.especificacion}</td>
+        <td class="border border-gray-300 px-4 py-2 text-black">${detail.detalle}</td>
+      </tr>`;
+      tableBody.innerHTML += row;
     });
+
+    const modal = document.getElementById("modal");
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+    modal.classList.remove("hidden");
+    setTimeout(() => {
+      modal.classList.remove("opacity-0", "scale-90");
+      modal.classList.add("opacity-100", "scale-100");
+    }, 10);
+    
+    document.body.classList.add("overflow-hidden");
+  }
+}
+
+function closeModal(event) {
+  if (!event || event.target.id === "modal" || event.target.id === "close-button") {
+    const modal = document.getElementById("modal");
+    modal.classList.remove("opacity-100", "scale-100");
+    modal.classList.add("opacity-0", "scale-90");
+
+    setTimeout(() => {
+      modal.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+      document.body.style.paddingRight = "";
+    }, 300); // Espera 300ms para ocultarlo después de la animación
+  }
+}
+
+/* Escalar mapa */
+function scaleMap() {
+  const img = document.getElementById("map-image");
+  const originalWidth = 518; 
+  const originalHeight = 367;
   
-    window.addEventListener("load", scaleMap);
-    window.addEventListener("resize", scaleMap);
+  const currentWidth = img.clientWidth;
+  const currentHeight = img.clientHeight;
+
+  const widthRatio = currentWidth / originalWidth;
+  const heightRatio = currentHeight / originalHeight;
+
+  document.querySelectorAll("map[name='cortesMap'] area").forEach(area => {
+    const coords = area.dataset.originalCoords.split(',').map(Number);
+    const newCoords = coords.map((coord, index) => 
+      index % 2 === 0 ? Math.round(coord * widthRatio) : Math.round(coord * heightRatio)
+    );
+    area.coords = newCoords.join(',');
+  });
+}
+
+document.querySelectorAll("map[name='cortesMap'] area").forEach(area => {
+  area.dataset.originalCoords = area.coords;
+});
+
+window.addEventListener("load", scaleMap);
+window.addEventListener("resize", scaleMap);
   </script>
 
   <!--Script Idiomas-->

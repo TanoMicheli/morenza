@@ -106,23 +106,22 @@
         </div>
     </section>
     
-      <div class="p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5" style="background-color:#9E7059">
-        <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 1" id="img1" />
-        <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 2" id="img2" />
-        <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 3" id="img3" />
-        <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 4" id="img4" />
-        <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 5" id="img5" />
-        <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 6" id="img6" />
-      </div>
-    
-      <!-- Modal para imágenes -->
-      <div id="modal" class="hidden fixed inset-0 z-50 w-screen h-screen flex justify-center items-center" onclick="closeModal(event)">
-        <!-- Imagen ampliada en el modal -->
-        <div class="relative bg-gray-700 p-8 rounded-lg shadow-lg max-w-5xl">
-          <button id="close-button" class="absolute top-2 right-2 text-black text-2xl font-bold" onclick="closeModal()">×</button>
+    <div class="p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5" style="background-color:#9E7059">
+      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 1" id="img1" />
+      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 2" id="img2" />
+      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 3" id="img3" />
+      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 4" id="img4" />
+      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 5" id="img5" />
+      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 6" id="img6" />
+  </div>
+  
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50 opacity-0 scale-90 transition-all duration-300 hidden" onclick="closeModal(event)">
+      <div class="relative bg-gray-700 p-8 rounded-lg shadow-lg max-w-5xl transition-all duration-300">
+          <button id="close-button" class="absolute top-2 right-2 text-white text-2xl font-bold" onclick="closeModal()">×</button>
           <img id="modal-img" class="w-full h-auto rounded-lg" />
-        </div>
       </div>
+  </div>
 
       <footer class="text-white py-12" style="background-color: #231517; position: relative;">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -181,46 +180,37 @@
       </a>
     
       <script>
-        // Obtener todas las imágenes en la cuadrícula
         var images = document.querySelectorAll('.grid img');
+        var modal = document.getElementById("modal");
+        var modalImg = document.getElementById("modal-img");
     
-        // Agregar un evento de clic a cada imagen
         images.forEach(function (img) {
-          img.addEventListener('click', function () {
-            showModal(img.src, img.id);
-          });
+            img.addEventListener('click', function () {
+                showModal(img.src);
+            });
         });
     
-        // Mostrar el modal
-        function showModal(src, id) {
-          const modalImg = document.getElementById("modal-img");
-          modalImg.src = src;
-    
-          // Ajustar tamaño de la imagen 87.jpg en el modal
-          if (id === "img2") {
-            modalImg.style.maxWidth = "85%"; // Tamaño más pequeño para img87.jpg
-          } else {
-            modalImg.style.maxWidth = "100%"; // Tamaño normal para otras imágenes
-          }
-    
-          // Desactivar el desplazamiento de la página
-          document.body.style.overflow = 'hidden';
-    
-          // Mostrar el modal
-          document.getElementById("modal").classList.remove('hidden');
+        function showModal(src) {
+            modalImg.src = src;
+            modal.classList.remove("hidden");
+            setTimeout(() => {
+                modal.classList.remove("opacity-0", "scale-90");
+                modal.classList.add("opacity-100", "scale-100");
+            }, 10);
+            document.body.style.overflow = 'hidden';
         }
     
-        // Cerrar el modal
         function closeModal(event) {
-          // Si se hace clic en el fondo o en el botón, cerrar el modal
-          if (!event || event.target.id === "modal" || event.target.id === "close-button") {
-            document.getElementById("modal").classList.add('hidden');
-    
-            // Restaurar el desplazamiento de la página
-            document.body.style.overflow = '';
-          }
+            if (!event || event.target.id === "modal" || event.target.id === "close-button") {
+                modal.classList.remove("opacity-100", "scale-100");
+                modal.classList.add("opacity-0", "scale-90");
+                setTimeout(() => {
+                    modal.classList.add("hidden");
+                }, 300);
+                document.body.style.overflow = '';
+            }
         }
-      </script>
+    </script>
 
       <!--Script Idiomas-->
   <script>
