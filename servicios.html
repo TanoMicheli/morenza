@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kadwa:wght@400;700&family=Kanit:ital,wght@1,300;1,700&family=Lato:ital@1&family=Montserrat:ital,wght@0,650;1,650&family=Poppins:ital,wght@1,400;1,500&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
   <link rel="icon" href="/images/logos/logo_sim_1.png" sizes="32x32">
   <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     @font-face {
       font-family: 'Blauer Nue';
@@ -47,6 +48,60 @@
     .cut-map:hover img {
       transform: scale(1.1);
     }
+    .service-image {
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      transition: all 0.5s ease;
+      position: relative;
+    }
+    .service-image:hover {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .service-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(191, 31, 46, 0.2), rgba(158, 112, 89, 0.2));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .service-image:hover::after {
+      opacity: 1;
+    }
+    .service-content {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+      border-left: 5px solid #BF1F2E;
+    }
+    .service-card {
+      position: relative;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      opacity: 0.1;
+      z-index: 1;
+    }
+    .animated-button {
+      position: relative;
+      overflow: hidden;
+    }
+    .animated-button::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+    .animated-button:hover::after {
+      left: 100%;
+    }
   </style>
 </head>
 <body class="text-white">
@@ -78,6 +133,113 @@
       </div>
     </div>
   </header>
+
+  <section class="py-24" style="background-color: #E5DAD1;">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-32" data-aos="fade-down">
+        <h2 class="text-6xl font-bold mb-6" style="letter-spacing: 2.3px; color: #9E7059;">Nuestros Servicios</h2>
+        <div class="w-24 h-1 bg-[#BF1F2E] mx-auto"></div>
+      </div>
+      
+      <div class="space-y-40">
+        <!-- Servicio 1: Texto izquierda, imagen derecha -->
+        <div class="service-card flex flex-col md:flex-row items-center gap-12 relative">
+          <div class="w-full md:w-1/2 p-12 service-content rounded-2xl shadow-2xl" data-aos="fade-right">
+            <h3 class="text-4xl font-bold mb-8" style="color: #9E7059;">Mercado Nacional</h3>
+            <p class="text-xl leading-relaxed mb-8" style="color: #9E7059;">
+              Líderes en la distribución de carne premium en el mercado argentino, llevando calidad excepcional a:
+            </p>
+            <div class="space-y-6 mb-12">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#BF1F2E] flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700">Carnicerías Premium</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#BF1F2E] flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700">Supermercados</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#BF1F2E] flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700">Distribuidores Mayoristas</span>
+              </div>
+            </div>
+            <p class="text-gray-700 text-lg mb-12 italic border-l-4 border-[#BF1F2E] pl-4">
+              "Garantizamos la más alta calidad en cada corte, con trazabilidad completa y entregas puntuales en todo el territorio nacional."
+            </p>
+          </div>
+          <div class="w-full md:w-1/2" data-aos="fade-left">
+            <div class="service-image rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
+              <img src="/images/img91.jpg" alt="Mercado Nacional" class="w-full h-[600px] object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 2: Imagen izquierda, texto derecha -->
+        <div class="service-card flex flex-col-reverse md:flex-row items-center gap-12 relative">
+          <div class="w-full md:w-1/2" data-aos="fade-right">
+            <div class="service-image rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
+              <img src="/images/img131.jpg" alt="Exportación" class="w-full h-[600px] object-cover">
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 p-12 service-content rounded-2xl shadow-2xl" data-aos="fade-left">
+            <h3 class="text-4xl font-bold mb-8" style="color: #9E7059;">Exportación Internacional</h3>
+            <p class="text-xl leading-relaxed mb-8" style="color: #9E7059;">
+              Llevamos la excelencia de la carne argentina a mercados internacionales con los más altos estándares:
+            </p>
+            <div class="space-y-6 mb-12">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#BF1F2E] flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700">Certificaciones Internacionales</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#BF1F2E] flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700">Gestión Aduanera Completa</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#BF1F2E] flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700">Cadena de Frío Garantizada</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-[#BF1F2E] flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                  </svg>
+                </div>
+                <span class="text-lg text-gray-700">Asesoramiento Multilingüe</span>
+              </div>
+            </div>
+            <p class="text-gray-700 text-lg mb-12 italic border-l-4 border-[#BF1F2E] pl-4">
+              "Cumplimos con los más altos estándares de calidad y regulaciones internacionales, asegurando que nuestros productos lleguen en óptimas condiciones a cualquier parte del mundo."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!--Script Idiomas-->
   <script>
@@ -174,6 +336,14 @@
   </script>
   
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+  </script>
 
   <footer class="text-white py-12" style="background-color: #231517; position: relative;">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
