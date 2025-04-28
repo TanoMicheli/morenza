@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kadwa:wght@400;700&family=Kanit:ital,wght@1,300;1,700&family=Lato:ital@1&family=Montserrat:ital,wght@0,650;1,650&family=Poppins:ital,wght@1,400;1,500&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
   <link rel="icon" href="/images/logos/logo_sim_1.png" sizes="32x32">
   <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     @font-face {
         font-family: 'Blauer Nue';
@@ -47,6 +48,173 @@
       .cut-map:hover img {
         transform: scale(1.1);
       }
+
+      /* Nuevos estilos para el modal */
+      .modal-backdrop {
+        backdrop-filter: blur(5px);
+        background-color: rgba(35, 21, 23, 0.95);
+      }
+
+      .modal-content {
+        transform: scale(0.9);
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .modal-content.active {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .modal-image {
+        border-radius: 12px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        transition: transform 0.5s ease;
+      }
+
+      .modal-image:hover {
+        transform: scale(1.02);
+      }
+
+      .close-button {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .close-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: rotate(90deg);
+      }
+
+      .gallery-image {
+        transition: all 0.3s ease;
+        cursor: zoom-in;
+      }
+
+      .gallery-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      /* Nuevos estilos para el Hero Section */
+      .hero {
+        position: relative;
+        background: linear-gradient(135deg, #E5DAD1 0%, #F5EBE6 100%);
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url('/images/pattern.png') repeat;
+        opacity: 0.03;
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-size: 4.5rem;
+        line-height: 1;
+        background: linear-gradient(to right, #231517, #9E7059);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        display: inline-block;
+      }
+
+      .hero-text-container {
+        position: relative;
+        padding-left: 2rem;
+        margin: 2rem 0;
+        border-left: 4px solid #BF1F2E;
+      }
+
+      .hero-text {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        color: #231517;
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+        transform: translateX(-20px);
+        transition: all 0.5s ease;
+      }
+
+      .hero-text-container:hover .hero-text {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .hero-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        transform: translateY(20px);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .hero-image:hover {
+        transform: translateY(0);
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.25);
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .hero-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .hero-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, rgba(191, 31, 46, 0.1), rgba(158, 112, 89, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .hero-image:hover::after {
+        opacity: 1;
+      }
+
+      .hero-accent {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(191, 31, 46, 0.1) 0%, rgba(191, 31, 46, 0) 70%);
+        z-index: 1;
+      }
+
+      .hero-accent-1 {
+        top: -100px;
+        left: -100px;
+      }
+
+      .hero-accent-2 {
+        bottom: -50px;
+        right: -50px;
+      }
   </style>
 </head>
 <body class="text-white">
@@ -80,47 +248,58 @@
   </header>
     <body class="overflow-hidden">
       <!-- Hero Section -->
-      <section class="hero" style="background-color:#E5DAD1">
-        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-            <div class="mr-auto place-self-center lg:col-span-7">
-                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl" 
-                    style="letter-spacing: 2.5px; color:#231517">
-                    MORENZA
-                </h1>
-                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl" 
-                    style="color:#231517;" data-key="hero1">
-                    Seguimos creciendo y ampliando nuestro circuito productivo
-                </p>
-                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl" 
-                    style="color:#231517;" data-key="hero2">
-                    Seleccionamos los mejores animales, despiezamos con la más moderna tecnología y distribuimos manteniendo la frescura.
-                </p>
-                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl" 
-                    style="color:#231517;" data-key="hero3">
-                    Nuestras carnes están dedicadas a esos momentos tan especiales que merecen ser acompañados de sabores Premium.
-                </p> 
+      <section class="hero py-20">
+        <div class="hero-accent hero-accent-1"></div>
+        <div class="hero-accent hero-accent-2"></div>
+        <div class="container mx-auto px-4">
+            <div class="grid max-w-screen-xl mx-auto lg:gap-16 xl:gap-24 lg:grid-cols-12">
+                <div class="mr-auto place-self-center lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="hero-content">
+                        <h1 class="hero-title mb-8" data-aos="fade-up" data-aos-delay="200">
+                            MORENZA
+                        </h1>
+                        <div class="hero-text-container">
+                            <p class="hero-text" data-aos="fade-up" data-aos-delay="400" data-key="hero1">
+                                Seguimos creciendo y ampliando nuestro circuito productivo
+                            </p>
+                            <p class="hero-text" data-aos="fade-up" data-aos-delay="600" data-key="hero2">
+                                Seleccionamos los mejores animales, despiezamos con la más moderna tecnología y distribuimos manteniendo la frescura.
+                            </p>
+                            <p class="hero-text" data-aos="fade-up" data-aos-delay="800" data-key="hero3">
+                                Nuestras carnes están dedicadas a esos momentos tan especiales que merecen ser acompañados de sabores Premium.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden lg:mt-0 lg:col-span-5 lg:flex" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="hero-image">
+                        <img src="/images/v_223182_53684857.jpg" alt="Morenza Premium" class="w-full h-auto">
+                    </div>
+                </div>
             </div>
-            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="/images/v_223182_53684857.jpg" alt="mockup" class="rounded-lg">
-            </div>                
         </div>
     </section>
     
     <div class="p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5" style="background-color:#9E7059">
-      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 1" id="img1" />
-      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 2" id="img2" />
-      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 3" id="img3" />
-      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 4" id="img4" />
-      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img131.jpg" alt="Img 5" id="img5" />
-      <img class="w-full object-cover cursor-pointer rounded-lg shadow-lg" src="/images/img193.jpg" alt="Img 6" id="img6" />
+      <img class="gallery-image w-full h-64 object-cover rounded-lg shadow-lg" src="/images/img131.jpg" alt="" id="img1" data-aos="fade-up" data-aos-delay="100"/>
+      <img class="gallery-image w-full h-64 object-cover rounded-lg shadow-lg" src="/images/img193.jpg" alt="" id="img2" data-aos="fade-up" data-aos-delay="200"/>
+      <img class="gallery-image w-full h-64 object-cover rounded-lg shadow-lg" src="/images/img131.jpg" alt="" id="img3" data-aos="fade-up" data-aos-delay="300"/>
+      <img class="gallery-image w-full h-64 object-cover rounded-lg shadow-lg" src="/images/img193.jpg" alt="" id="img4" data-aos="fade-up" data-aos-delay="400"/>
+      <img class="gallery-image w-full h-64 object-cover rounded-lg shadow-lg" src="/images/img131.jpg" alt="" id="img5" data-aos="fade-up" data-aos-delay="500"/>
+      <img class="gallery-image w-full h-64 object-cover rounded-lg shadow-lg" src="/images/img193.jpg" alt="" id="img6" data-aos="fade-up" data-aos-delay="600"/>
   </div>
   
   <!-- Modal -->
-  <div id="modal" class="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50 opacity-0 scale-90 transition-all duration-300 hidden" onclick="closeModal(event)">
-      <div class="relative bg-gray-700 p-8 rounded-lg shadow-lg max-w-5xl transition-all duration-300">
-          <button id="close-button" class="absolute top-2 right-2 text-white text-2xl font-bold" onclick="closeModal()">×</button>
-          <img id="modal-img" class="w-full h-auto rounded-lg" />
-      </div>
+  <div id="modal" class="modal-backdrop fixed inset-0 z-50 flex justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="modal-content relative max-w-5xl w-11/12 mx-auto">
+        <button id="close-button" class="close-button absolute -top-12 right-0 text-white text-2xl font-light" onclick="closeModal()">&times;</button>
+        <div class="relative">
+            <img id="modal-img" class="modal-image w-full h-auto" alt="Imagen ampliada"/>
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white rounded-b-lg opacity-0 transition-opacity duration-300" id="modal-caption">
+                <p id="modal-description" class="text-lg"></p>
+            </div>
+        </div>
+    </div>
   </div>
 
       <footer class="text-white py-12" style="background-color: #231517; position: relative;">
@@ -180,36 +359,61 @@
       </a>
     
       <script>
-        var images = document.querySelectorAll('.grid img');
+        var images = document.querySelectorAll('.gallery-image');
         var modal = document.getElementById("modal");
         var modalImg = document.getElementById("modal-img");
+        var modalContent = document.querySelector(".modal-content");
+        var modalCaption = document.getElementById("modal-caption");
+        var modalDescription = document.getElementById("modal-description");
     
         images.forEach(function (img) {
             img.addEventListener('click', function () {
-                showModal(img.src);
+                showModal(img.src, img.alt);
             });
         });
     
-        function showModal(src) {
+        function showModal(src, alt) {
             modalImg.src = src;
-            modal.classList.remove("hidden");
-            setTimeout(() => {
-                modal.classList.remove("opacity-0", "scale-90");
-                modal.classList.add("opacity-100", "scale-100");
-            }, 10);
+            modalDescription.textContent = alt;
+            modal.classList.remove("opacity-0", "pointer-events-none");
             document.body.style.overflow = 'hidden';
+            
+            // Dar tiempo para que se complete la transición de opacidad
+            setTimeout(() => {
+                modalContent.classList.add("active");
+                modalCaption.classList.add("opacity-100");
+            }, 50);
         }
     
-        function closeModal(event) {
-            if (!event || event.target.id === "modal" || event.target.id === "close-button") {
-                modal.classList.remove("opacity-100", "scale-100");
-                modal.classList.add("opacity-0", "scale-90");
-                setTimeout(() => {
-                    modal.classList.add("hidden");
-                }, 300);
+        function closeModal() {
+            modalContent.classList.remove("active");
+            modalCaption.classList.remove("opacity-100");
+            
+            // Esperar a que termine la animación del contenido
+            setTimeout(() => {
+                modal.classList.add("opacity-0", "pointer-events-none");
                 document.body.style.overflow = '';
-            }
+            }, 300);
         }
+    
+        // Cerrar modal al hacer clic fuera de la imagen
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    
+        // Prevenir que el modal se cierre al hacer clic en la imagen
+        modalContent.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    
+        // Manejar tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
 
       <!--Script Idiomas-->
@@ -298,6 +502,14 @@
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+  </script>
   </body>
     
     

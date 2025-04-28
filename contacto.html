@@ -47,6 +47,173 @@
     .cut-map:hover img {
       transform: scale(1.1);
     }
+
+    /* Estilos mejorados para el formulario */
+    .contact-section {
+        background: linear-gradient(135deg, #E5DAD1 0%, #F5EBE6 100%);
+        position: relative;
+        overflow: hidden;
+        min-height: calc(100vh - 150px);
+        padding: 2rem 0;
+    }
+
+    .contact-title {
+        font-size: 3.5rem;
+        color: #231517;
+        font-family: 'Blauer Nue', sans-serif;
+        letter-spacing: 4px;
+        position: relative;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-subtitle {
+        font-family: 'Blauer Nue', sans-serif;
+        color: #231517;
+        letter-spacing: 2.5px;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-container {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        max-width: 600px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        border: 2px solid #E5DAD1;
+        border-radius: 0.75rem;
+        background: white;
+        transition: all 0.3s ease;
+        color: #231517;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: #BF1F2E;
+        box-shadow: 0 0 0 4px rgba(191, 31, 46, 0.1);
+    }
+
+    .form-label {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        padding: 0 0.5rem;
+        color: #666;
+        font-family: 'Blauer Nue', sans-serif;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        font-size: 1rem;
+    }
+
+    .form-input:focus ~ .form-label,
+    .form-input:not(:placeholder-shown) ~ .form-label {
+        top: 0;
+        transform: translateY(-50%) scale(0.9);
+        color: #BF1F2E;
+    }
+
+    textarea.form-input {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    textarea.form-input ~ .form-label {
+        top: 1.5rem;
+    }
+
+    textarea.form-input:focus ~ .form-label,
+    textarea.form-input:not(:placeholder-shown) ~ .form-label {
+        top: 0;
+    }
+
+    .error-message {
+        color: #BF1F2E;
+        font-size: 0.8rem;
+        margin-top: 0.25rem;
+        display: none;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .error-message.visible {
+        display: block;
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 1rem;
+        background: linear-gradient(135deg, #BF1F2E 0%, #9E7059 100%);
+        color: white;
+        border: none;
+        border-radius: 0.75rem;
+        font-family: 'Blauer Nue', sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .submit-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(191, 31, 46, 0.2);
+    }
+
+    .submit-button:active {
+        transform: translateY(0);
+    }
+
+    .button-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .button-icon {
+        transition: transform 0.3s ease;
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .submit-button:hover .button-icon {
+        transform: translateX(5px);
+    }
   </style>
 </head>
 <body class="text-white">
@@ -80,37 +247,46 @@
   </header>
 
   <!--Formulario de Contacto-->
-  <section class="flex flex-col items-center justify-center min-h-screen bg-gray-100" style="background-color: #E5DAD1;">
-    <h1 class="text-5xl font-bold mb-8" style="color: #BF1F2E; letter-spacing: 2px;" data-key="contactanos">Contáctanos</h1>
-    <div class="w-full max-w-2xl p-8 bg-white rounded-lg shadow-md">
-        <h2 class="text-3xl font-semibold text-center mb-6 text-gray-900" style="letter-spacing: 2px;" data-key="escribenos">Escríbenos un mensaje</h2>
-        <form id="contactForm">
-            <div class="mb-6">
-                <label class="block text-lg font-medium text-gray-900" for="name" data-key="nombre">Nombre</label>
-                <input id="name" type="text" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" placeholder="Tu nombre" data-key="placeholder_nombre">
-                <p class="text-red-500 text-sm hidden" id="nameError" data-key="error_nombre">Este campo es obligatorio</p>
+  <section class="contact-section flex flex-col items-center justify-center">
+    <h1 class="contact-title" data-key="contactanos">Contáctanos</h1>
+    <div class="form-container">
+        <h2 class="contact-subtitle text-center" data-key="escribenos">Escríbenos un mensaje</h2>
+        <form id="contactForm" class="space-y-6">
+            <div class="input-group">
+                <input type="text" id="name" class="form-input" placeholder=" ">
+                <label for="name" class="form-label" data-key="nombre">Nombre</label>
+                <p class="error-message" id="nameError" data-key="error_nombre">Este campo es obligatorio</p>
             </div>
-            <div class="mb-6">
-                <label class="block text-lg font-medium text-gray-900" for="email" data-key="email">Correo Electrónico</label>
-                <input id="email" type="email" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" placeholder="correo@ejemplo.com" data-key="placeholder_correo">
-                <p class="text-red-500 text-sm hidden" id="emailError" data-key="error_correo">Ingrese un correo válido</p>
+
+            <div class="input-group">
+                <input type="email" id="email" class="form-input" placeholder=" ">
+                <label for="email" class="form-label" data-key="email">Correo Electrónico</label>
+                <p class="error-message" id="emailError" data-key="error_correo">Ingrese un correo válido</p>
             </div>
-            <div class="mb-6">
-                <label class="block text-lg font-medium text-gray-900" for="subject" data-key="asunto">Asunto</label>
-                <input id="subject" type="text" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" placeholder="Asunto" data-key="placeholder_asunto">
-                <p class="text-red-500 text-sm hidden" id="subjectError" data-key="error_asunto">Este campo es obligatorio</p>
+
+            <div class="input-group">
+                <input type="text" id="subject" class="form-input" placeholder=" ">
+                <label for="subject" class="form-label" data-key="asunto">Asunto</label>
+                <p class="error-message" id="subjectError" data-key="error_asunto">Este campo es obligatorio</p>
             </div>
-            <div class="mb-6">
-                <label class="block text-lg font-medium text-gray-900" for="message" data-key="mensaje">Mensaje</label>
-                <textarea id="message" class="w-full p-3 border rounded-lg text-gray-900 bg-white text-lg" rows="6" placeholder="Escribe tu mensaje" data-key="placeholder_mensaje"></textarea>
-                <p class="text-red-500 text-sm hidden" id="messageError" data-key="error_mensaje">Este campo es obligatorio</p>
+
+            <div class="input-group">
+                <textarea id="message" class="form-input" placeholder=" "></textarea>
+                <label for="message" class="form-label" data-key="mensaje">Mensaje</label>
+                <p class="error-message" id="messageError" data-key="error_mensaje">Este campo es obligatorio</p>
             </div>
-            <button type="submit" class="w-full p-3 bg-green-500 text-white rounded-lg flex justify-center items-center hover:bg-green-600 focus:ring-4 focus:ring-green-300 text-lg">
-                <span id="buttonText" data-key="enviar">Enviar Mensaje</span>
-                <svg id="loader" class="w-6 h-6 ml-2 hidden animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
-                </svg>
+
+            <button type="submit" class="submit-button">
+                <div class="button-content">
+                    <span id="buttonText" data-key="enviar">Enviar Mensaje</span>
+                    <svg class="button-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                    <svg id="loader" class="w-6 h-6 hidden animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                    </svg>
+                </div>
             </button>
         </form>
     </div>
@@ -123,52 +299,81 @@
         event.preventDefault();
         let isValid = true;
         
+        // Obtener referencias a los elementos
         const name = document.getElementById('name');
         const email = document.getElementById('email');
         const subject = document.getElementById('subject');
         const message = document.getElementById('message');
         
-        document.getElementById('nameError').classList.add('hidden');
-        document.getElementById('emailError').classList.add('hidden');
-        document.getElementById('subjectError').classList.add('hidden');
-        document.getElementById('messageError').classList.add('hidden');
+        // Ocultar todos los mensajes de error
+        document.querySelectorAll('.error-message').forEach(error => {
+            error.classList.remove('visible');
+        });
         
+        // Validar nombre
         if (name.value.trim() === '') {
-            document.getElementById('nameError').classList.remove('hidden');
+            document.getElementById('nameError').classList.add('visible');
             isValid = false;
+            name.focus();
         }
         
+        // Validar email
         if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-            document.getElementById('emailError').classList.remove('hidden');
+            document.getElementById('emailError').classList.add('visible');
             isValid = false;
+            if (name.value.trim() !== '') email.focus();
         }
         
+        // Validar asunto
         if (subject.value.trim() === '') {
-            document.getElementById('subjectError').classList.remove('hidden');
+            document.getElementById('subjectError').classList.add('visible');
             isValid = false;
+            if (name.value.trim() !== '' && email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) subject.focus();
         }
         
+        // Validar mensaje
         if (message.value.trim() === '') {
-            document.getElementById('messageError').classList.remove('hidden');
+            document.getElementById('messageError').classList.add('visible');
             isValid = false;
+            if (name.value.trim() !== '' && email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) && subject.value.trim() !== '') message.focus();
         }
         
         if (isValid) {
             const buttonText = document.getElementById('buttonText');
             const loader = document.getElementById('loader');
+            const buttonIcon = document.querySelector('.button-icon');
             
+            // Ocultar texto e icono, mostrar loader
             buttonText.textContent = 'Enviando...';
+            buttonIcon.classList.add('hidden');
             loader.classList.remove('hidden');
             
+            // Simular envío
             setTimeout(() => {
-                buttonText.textContent = 'Mensaje Enviado';
+                buttonText.textContent = '¡Mensaje Enviado!';
                 loader.classList.add('hidden');
+                
+                // Resetear formulario después de 2 segundos
                 setTimeout(() => {
                     buttonText.textContent = 'Enviar Mensaje';
+                    buttonIcon.classList.remove('hidden');
                     document.getElementById('contactForm').reset();
                 }, 2000);
-            }, 3000);
+            }, 2000);
         }
+    });
+
+    // Añadir efecto de focus a los labels
+    document.querySelectorAll('.form-input').forEach(input => {
+        input.addEventListener('focus', () => {
+            input.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', () => {
+            if (!input.value) {
+                input.parentElement.classList.remove('focused');
+            }
+        });
     });
 </script>
   <!--Script Idiomas-->
@@ -293,11 +498,11 @@
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   
   
-  <footer class="text-white py-12" style="background-color: #9E7059; position: relative;">
+  <footer class="text-white py-12" style="background-color: #231517; position: relative;">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="flex flex-col items-center">
         <a href="index.html">
-          <img src="/images/logos/logo_1.3.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
+          <img src="/images/logos/logo_1.5.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
         </a>
       </div>
   
