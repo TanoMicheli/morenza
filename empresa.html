@@ -49,7 +49,6 @@
         transform: scale(1.1);
       }
 
-      /* Nuevos estilos para el modal */
       .modal-backdrop {
         backdrop-filter: blur(5px);
         background-color: rgba(35, 21, 23, 0.95);
@@ -104,7 +103,6 @@
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
       }
 
-      /* Nuevos estilos para el Hero Section */
       .hero {
         position: relative;
         background: linear-gradient(135deg, #E5DAD1 0%, #F5EBE6 100%);
@@ -224,12 +222,10 @@
         <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
       </nav> 
       <div class="flex items-center space-x-2">
-        <!-- Botón de idioma -->
         <button id="language-button" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
           <img id="language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
           <span id="language-text">English (US)</span>
         </button>
-        <!-- Dropdown -->
         <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
           <ul class="py-2 font-medium">
             <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es" data-flag="/images/flags/es.png">🇪🇸 Español (ES)</a></li>
@@ -241,7 +237,6 @@
     </div>
   </header>
     <body class="overflow-hidden">
-      <!-- Hero Section -->
       <section class="hero py-20">
         <div class="hero-accent hero-accent-1"></div>
         <div class="hero-accent hero-accent-2"></div>
@@ -284,7 +279,6 @@
       <img class="gallery-image w-full h-64 object-cover rounded-lg shadow-lg" src="/images/carne-1.webp" alt="" id="img6" data-aos="fade-up" data-aos-delay="600"/>
   </div>
   
-  <!-- Modal -->
   <div id="modal" class="modal-backdrop fixed inset-0 z-50 flex justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
     <div class="modal-content relative max-w-5xl w-11/12 mx-auto">
         <button id="close-button" class="close-button absolute -top-12 right-0 text-white text-2xl font-light" onclick="closeModal()">&times;</button>
@@ -304,8 +298,7 @@
               <img src="/images/logos/logo_1.5.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
             </a>
           </div>
-      
-          <!-- Enlaces -->
+
           <div class="text-center mt-8">
             <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px; color: #FFFFFF" data-key="enlaces">Enlaces</h3>
             <nav class="space-y-4 text-3xl">
@@ -316,26 +309,20 @@
             </nav>
           </div>
       
-          <!-- Contáctanos -->
           <div class="text-center mt-8">
             <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px; color: #FFFFFF" data-key="contactanos">Contáctanos</h3>
             <p class="text-2xl" data-key="telefono">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
             <p class="text-2xl" data-key="correo">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
-          
-            <!-- Redes Sociales -->
             <div class="flex justify-center space-x-8 mt-6">
-              
-              <!-- Facebook -->
+
               <a href="#" aria-label="Facebook" class="hover:opacity-80 transition duration-300">
                 <img src="/images/icons/facebook-network-communication-internet-interaction-svgrepo-com.svg" alt="Facebook" class="h-12 w-12">
               </a>
-          
-              <!-- Instagram -->
+
               <a href="#" aria-label="Instagram" class="hover:opacity-80 transition duration-300">
                 <img src="/images/icons/instagram-1-svgrepo-com.svg" alt="Instagram" class="h-12 w-12">
               </a>
-    
-              <!-- LinkedIn -->
+
               <a href="#" aria-label="Instagram" class="hover:opacity-80 transition duration-300">
                 <img src="/images/icons/linkedin-svgrepo-com.svg" alt="LinkedIn" class="h-12 w-12">
               </a>
@@ -343,8 +330,7 @@
             </div>
           </div>      
         </div>
-      
-        <!-- Pie de página centrado -->
+
         <div class="border-t border-gray-700 mt-8 pt-4 text-center">
           <p class="text-xl text-white">&copy; 2025 Morenza. Todos los derechos reservados.</p>
         </div>
@@ -373,7 +359,6 @@
             modal.classList.remove("opacity-0", "pointer-events-none");
             document.body.style.overflow = 'hidden';
             
-            // Dar tiempo para que se complete la transición de opacidad
             setTimeout(() => {
                 modalContent.classList.add("active");
                 modalCaption.classList.add("opacity-100");
@@ -384,26 +369,22 @@
             modalContent.classList.remove("active");
             modalCaption.classList.remove("opacity-100");
             
-            // Esperar a que termine la animación del contenido
             setTimeout(() => {
                 modal.classList.add("opacity-0", "pointer-events-none");
                 document.body.style.overflow = '';
             }, 300);
         }
     
-        // Cerrar modal al hacer clic fuera de la imagen
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
                 closeModal();
             }
         });
-    
-        // Prevenir que el modal se cierre al hacer clic en la imagen
+
         modalContent.addEventListener('click', function(e) {
             e.stopPropagation();
         });
     
-        // Manejar tecla ESC
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
@@ -411,7 +392,6 @@
         });
     </script>
 
-      <!--Script Idiomas-->
   <script>
     const traducciones = {
       es: {
@@ -464,7 +444,6 @@
     function cambiarIdioma(idioma) {
       if (!traducciones[idioma]) return;
     
-      // Cambia los textos de la navegación y secciones
       document.querySelectorAll(".nav-link, .section-text,  [data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
         if (traducciones[idioma][key]) {
@@ -472,15 +451,12 @@
         }
       });
     
-      // Actualiza el texto y la bandera en el botón de selección de idioma
       document.getElementById("language-text").textContent = traducciones[idioma].idioma;
       document.getElementById("language-flag").src = traducciones[idioma].flag;
     
-      // Guarda la selección en localStorage
       localStorage.setItem("selectedLanguage", idioma);
     }
     
-    // Agregar eventos a las opciones de idioma
     document.querySelectorAll(".language-option").forEach(option => {
       option.addEventListener("click", (e) => {
         e.preventDefault();
@@ -490,7 +466,6 @@
       });
     });
     
-    // Cargar idioma guardado al iniciar la página
     document.addEventListener("DOMContentLoaded", () => {
       const savedLang = localStorage.getItem("selectedLanguage") || "en";
       cambiarIdioma(savedLang);

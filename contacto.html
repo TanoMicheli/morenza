@@ -47,8 +47,6 @@
     .cut-map:hover img {
       transform: scale(1.1);
     }
-
-    /* Estilos mejorados para el formulario */
     .contact-section {
         background: linear-gradient(135deg, #E5DAD1 0%, #F5EBE6 100%);
         position: relative;
@@ -229,12 +227,10 @@
         <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
       </nav> 
       <div class="flex items-center space-x-2">
-        <!-- Botón de idioma -->
         <button id="language-button" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
           <img id="language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
           <span id="language-text">English (US)</span>
         </button>
-        <!-- Dropdown -->
         <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
           <ul class="py-2 font-medium">
             <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es" data-flag="/images/flags/es.png">🇪🇸 Español (ES)</a></li>
@@ -245,8 +241,6 @@
       </div>
     </div>
   </header>
-
-  <!--Formulario de Contacto-->
   <section class="contact-section flex flex-col items-center justify-center">
     <h1 class="contact-title" data-key="contactanos">Contáctanos</h1>
     <div class="form-container">
@@ -291,47 +285,32 @@
         </form>
     </div>
 </section>
-
-  
-  <!--Script Contacto-->
   <script>
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault();
         let isValid = true;
-        
-        // Obtener referencias a los elementos
         const name = document.getElementById('name');
         const email = document.getElementById('email');
         const subject = document.getElementById('subject');
         const message = document.getElementById('message');
-        
-        // Ocultar todos los mensajes de error
         document.querySelectorAll('.error-message').forEach(error => {
             error.classList.remove('visible');
         });
-        
-        // Validar nombre
         if (name.value.trim() === '') {
             document.getElementById('nameError').classList.add('visible');
             isValid = false;
             name.focus();
         }
-        
-        // Validar email
         if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
             document.getElementById('emailError').classList.add('visible');
             isValid = false;
             if (name.value.trim() !== '') email.focus();
         }
-        
-        // Validar asunto
         if (subject.value.trim() === '') {
             document.getElementById('subjectError').classList.add('visible');
             isValid = false;
             if (name.value.trim() !== '' && email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) subject.focus();
         }
-        
-        // Validar mensaje
         if (message.value.trim() === '') {
             document.getElementById('messageError').classList.add('visible');
             isValid = false;
@@ -343,17 +322,14 @@
             const loader = document.getElementById('loader');
             const buttonIcon = document.querySelector('.button-icon');
             
-            // Ocultar texto e icono, mostrar loader
             buttonText.textContent = 'Enviando...';
             buttonIcon.classList.add('hidden');
             loader.classList.remove('hidden');
-            
-            // Simular envío
+
             setTimeout(() => {
                 buttonText.textContent = '¡Mensaje Enviado!';
                 loader.classList.add('hidden');
                 
-                // Resetear formulario después de 2 segundos
                 setTimeout(() => {
                     buttonText.textContent = 'Enviar Mensaje';
                     buttonIcon.classList.remove('hidden');
@@ -363,7 +339,6 @@
         }
     });
 
-    // Añadir efecto de focus a los labels
     document.querySelectorAll('.form-input').forEach(input => {
         input.addEventListener('focus', () => {
             input.parentElement.classList.add('focused');
@@ -376,7 +351,6 @@
         });
     });
 </script>
-  <!--Script Idiomas-->
   <script>
     const traducciones = {
       es: {
@@ -462,23 +436,19 @@
     function cambiarIdioma(idioma) {
       if (!traducciones[idioma]) return;
     
-      // Cambia los textos de la navegación y secciones
       document.querySelectorAll(".nav-link, .section-text, [data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
         if (traducciones[idioma][key]) {
           el.innerHTML = traducciones[idioma][key];
         }
       });
-    
-      // Actualiza el texto y la bandera en el botón de selección de idioma
+
       document.getElementById("language-text").textContent = traducciones[idioma].idioma;
       document.getElementById("language-flag").src = traducciones[idioma].flag;
     
-      // Guarda la selección en localStorage
       localStorage.setItem("selectedLanguage", idioma);
     }
-    
-    // Agregar eventos a las opciones de idioma
+
     document.querySelectorAll(".language-option").forEach(option => {
       option.addEventListener("click", (e) => {
         e.preventDefault();
@@ -487,8 +457,7 @@
         document.getElementById("language-dropdown-menu").classList.add("hidden");
       });
     });
-    
-    // Cargar idioma guardado al iniciar la página
+
     document.addEventListener("DOMContentLoaded", () => {
       const savedLang = localStorage.getItem("selectedLanguage") || "en";
       cambiarIdioma(savedLang);
@@ -517,26 +486,21 @@
         </nav>
       </div>
   
-      <!-- Contáctanos -->
       <div class="text-center mt-8">
         <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;" data-key="contactanos">Contáctanos</h3>
         <p class="text-2xl" data-key="telefono">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
         <p class="text-2xl" data-key="correo">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
       
-        <!-- Redes Sociales -->
         <div class="flex justify-center space-x-8 mt-6">
-          
-          <!-- Facebook -->
+
           <a href="#" aria-label="Facebook" class="hover:opacity-80 transition duration-300">
             <img src="/images/icons/facebook-network-communication-internet-interaction-svgrepo-com.svg" alt="Facebook" class="h-12 w-12">
           </a>
-      
-          <!-- Instagram -->
+
           <a href="#" aria-label="Instagram" class="hover:opacity-80 transition duration-300">
             <img src="/images/icons/instagram-1-svgrepo-com.svg" alt="Instagram" class="h-12 w-12">
           </a>
 
-          <!-- LinkedIn -->
           <a href="#" aria-label="Instagram" class="hover:opacity-80 transition duration-300">
             <img src="/images/icons/linkedin-svgrepo-com.svg" alt="LinkedIn" class="h-12 w-12">
           </a>
@@ -544,8 +508,7 @@
         </div>
       </div>        
     </div>
-  
-    <!-- Pie de página centrado -->
+
     <div class="border-t border-gray-700 mt-8 pt-4 text-center">
       <p class="text-xl text-white">&copy; 2025 Morenza. Todos los derechos reservados.</p>
     </div>
