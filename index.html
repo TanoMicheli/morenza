@@ -62,12 +62,10 @@
         <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
       </nav> 
       <div class="flex items-center space-x-2">
-        <!-- Botón de idioma -->
         <button id="language-button" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
           <img id="language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
           <span id="language-text">English (US)</span>
         </button>
-        <!-- Dropdown -->
         <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
           <ul class="py-2 font-medium">
             <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es" data-flag="/images/flags/es.png">🇪🇸 Español (ES)</a></li>
@@ -80,7 +78,7 @@
   </header>
 
   <section class="relative h-screen bg-black bg-cover bg-center" style="background-image: url('/images/img192.jpg');">
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
       <div class="text-center">
         <h1 class="text-5xl font-bold text-red-600 section-text tracking-widest" data-key="bienvenidos">
           Bienvenidos a Nuestro Sitio
@@ -112,7 +110,6 @@
       <div class="max-w-7xl mx-auto h-max px-6 md:px-12 xl:px-6">
         <div class="md:w-2/3 lg:w-1/2">
           <h2 class="my-4 text-2xl font-bold text-white md:text-4xl" style="color: #231517;">¿Cómo trabajamos?</h2>
-          <p class="text-gray-700 font-semibold text-xl">Siguiendo nuestro proceso para que puedas empezar lo antes posible</p>
         </div>
         <div
           class="mt-8 grid divide-x divide-y  divide-gray-700 overflow-hidden rounded-3xl border text-gray-600 border-gray-700 sm:grid-cols-2 lg:grid-cols-4  lg:divide-y-0 xl:grid-cols-4">
@@ -133,7 +130,7 @@
               </div>
               <div class="space-y-2">
                 <h5 class="text-xl font-semibold text-white transition">Producción Primaria</h5>
-                <p class="text-gray-300 text-xl">En esta etapa, se enfoca en la reproducción y el cuidado de los animales jóvenes. Los establecimientos rurales dedicados a la cría de ganado se centran en la reproducción controlada y el desarrollo de los terneros.</p>
+                <p class="text-gray-300 text-xl">Etapa enfocada en la reproducción y el cuidado de animales jóvenes. Criados en los campos naturales de las mejores regiones argentinas, con razas carniceras seleccionadas y mejoradas genéticamente para la garantía de un novillo óptimo.</p>
               </div>
             </div>
           </div>
@@ -147,8 +144,8 @@
                 </svg>
               </div>
               <div class="space-y-2">
-                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Engorde y Ceba</h5>
-                <p class="text-gray-300 text-xl">En este proceso, se alimentan y cuidan hasta que alcancen el peso adecuado para la faena. Durante esta fase, se busca maximizar el rendimiento de carne por animal.</p>
+                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Engorde a Pastura o Corral</h5>
+                <p class="text-gray-300 text-xl">En este proceso, los animales se alimentan y cuidan hasta que alcanzan el peso adecuado para realizar su faena.</p>
               </div>
             </div>
           </div>
@@ -159,7 +156,7 @@
               </div>
               <div class="space-y-2">
                 <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Faena y Procesamiento</h5>
-                <p class="text-gray-300 text-xl">Este proceso es, básicamente, el sacrificio de los animales de manera humanitaria y la posterior transformación de la carne en diferentes cortes y productos.</p>
+                <p class="text-gray-300 text-xl">Este proceso es, básicamente, el sacrificio del animal de la manera más humanitaria posible para su posterior despostada y transformación de la media res en los diferentes cortes ofrecidos.</p>
               </div>
             </div>
           </div>
@@ -172,7 +169,7 @@
               <div class="space-y-2">
                 <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Consumo y Exportación
                 </h5>
-                <p class="text-gray-300 text-xl">Finalmente, la carne llega al consumidor local a través de la compra en tiendas y restaurantes. Además, una parte significativa se exporta a mercados internacionales, lo que convierte a Argentina en uno de los principales exportadores de carne del mundo.</p>
+                <p class="text-gray-300 text-xl">Finalmente, la carne llega al consumidor final mediante la venta en carnicerías o supermercados abastecidos por la empresa. Además, una parte significativa de nuestra producción tiene como destino mercados internacionales de alta exigencia y competencia. </p>
               </div>
             </div>
           </div>
@@ -181,11 +178,10 @@
     </div>
   
 
-  <section class="py-12" style="background-color: #231517;">
+  <section class="py-12" style="background-color: #9E7059;">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-white text-center mb-8">Mapa de Cortes de Carne Vacuno</h2>
+      <h2 class="text-4xl font-bold text-center mb-8" style="letter-spacing: 2.7px; color:#e5dad1">productos</h2>
       <div class="relative flex justify-center">
-        <!-- Imagen principal con mapa -->
         <img id="map-image" src="/images/despiece-mod.png" alt="Mapa de Cortes" class="w-2/3 md:w-1/2 rounded-lg" usemap="#cortesMap">
         
         <map name="cortesMap">
@@ -220,24 +216,71 @@
     </div>
   </section>
   
-  <!-- Modal detalles del corte -->
-<div id="modal" class="fixed inset-0 z-50 bg-black/80 flex justify-center items-center opacity-0 scale-90 transition-all duration-300 hidden" onclick="closeModal(event)">
-  <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-11/12 relative transition-all duration-300">
-      <button id="close-button" onclick="closeModal()" class="absolute top-4 right-4 text-black text-2xl font-bold">&times;</button>
-      <img id="cut-image" src="" alt="Detalle del Corte" class="w-full h-auto mb-4 rounded-lg">
-      <table id="cut-details" class="table-auto w-full border-collapse border border-gray-300">
-          <thead>
-              <tr class="bg-gray-200">
-                  <th class="border border-gray-300 px-4 py-2 text-black">Especificación</th>
-                  <th class="border border-gray-300 px-4 py-2 text-black">Detalle</th>
-              </tr>
-          </thead>
-          <tbody></tbody>
-      </table>
+
+<div id="modal" class="fixed inset-0 z-50 bg-black/95 flex justify-center items-center opacity-0 scale-95 transition-all duration-500 hidden backdrop-blur-lg" onclick="closeModal(event)">
+  <div class="bg-white max-w-5xl w-11/12 relative transition-all duration-500 transform overflow-hidden rounded-2xl shadow-2xl">
+    <div class="bg-red-600 p-4 flex justify-between items-center rounded-t-2xl">
+      <h3 id="cut-title" class="text-2xl font-bold text-white"></h3>
+      <button id="close-button" onclick="closeModal()" class="text-white hover:text-gray-200 transition-colors duration-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+      <div class="relative h-[400px] lg:h-[600px] overflow-hidden group">
+        <img id="cut-image" src="" alt="Detalle del Corte" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+              </svg>
+              <span id="cut-weight" class="text-lg"></span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <span id="cut-preparation" class="text-lg"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-8 bg-gray-50">
+        <div class="space-y-8">
+
+          <div>
+            <h4 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+              <svg class="w-6 h-6 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Características
+            </h4>
+            <ul id="cut-features" class="space-y-3 text-gray-600">
+            </ul>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-4 rounded-xl shadow-sm">
+              <div class="text-sm text-gray-500 mb-1">Calidad</div>
+              <div class="text-lg font-semibold text-gray-800">Premium</div>
+            </div>
+            <div class="bg-white p-4 rounded-xl shadow-sm">
+              <div class="text-sm text-gray-500 mb-1">Origen</div>
+              <div class="text-lg font-semibold text-gray-800">Argentina</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-  
-  <script>
+
+<script>
     const cutsData = {
       corte1: {
         image: "/images/cortes/cogote.jpg",
@@ -448,79 +491,102 @@
         ]
       },
     };
-/* Modal Imagenes */
-function showCutDetails(cutId) {
-  const cut = cutsData[cutId];
-  if (cut) {
-    document.getElementById("cut-image").src = cut.image;
-    const tableBody = document.getElementById("cut-details").querySelector("tbody");
-    tableBody.innerHTML = "";
-    cut.details.forEach(detail => {
-      const row = `<tr>
-        <td class="border border-gray-300 px-4 py-2 text-black">${detail.especificacion}</td>
-        <td class="border border-gray-300 px-4 py-2 text-black">${detail.detalle}</td>
-      </tr>`;
-      tableBody.innerHTML += row;
+
+    function showCutDetails(cutId) {
+      const cut = cutsData[cutId];
+      if (cut) {
+        document.getElementById("cut-image").src = cut.image;
+        
+        document.getElementById("cut-title").textContent = cut.details[0].detalle;
+        
+        document.getElementById("cut-weight").textContent = cut.details[1].detalle;
+        
+        document.getElementById("cut-preparation").textContent = cut.details[2].detalle;
+        
+        const featuresList = document.getElementById("cut-features");
+        featuresList.innerHTML = `
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Carne de primera calidad seleccionada</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>100% argentina de las mejores regiones</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Procesada bajo los más altos estándares</span>
+          </li>
+        `;
+
+        const modal = document.getElementById("modal");
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          modal.classList.remove("opacity-0", "scale-95");
+          modal.classList.add("opacity-100", "scale-100");
+        }, 10);
+        
+        document.body.classList.add("overflow-hidden");
+      }
+    }
+
+    function closeModal(event) {
+      if (!event || event.target.id === "modal" || event.target.id === "close-button") {
+        const modal = document.getElementById("modal");
+        modal.classList.remove("opacity-100", "scale-100");
+        modal.classList.add("opacity-0", "scale-95");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+          document.body.style.paddingRight = "";
+        }, 300);
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
     });
 
-    const modal = document.getElementById("modal");
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
+    function scaleMap() {
+      const img = document.getElementById("map-image");
+      const originalWidth = 518; 
+      const originalHeight = 367;
+      
+      const currentWidth = img.clientWidth;
+      const currentHeight = img.clientHeight;
 
-    modal.classList.remove("hidden");
-    setTimeout(() => {
-      modal.classList.remove("opacity-0", "scale-90");
-      modal.classList.add("opacity-100", "scale-100");
-    }, 10);
-    
-    document.body.classList.add("overflow-hidden");
-  }
-}
+      const widthRatio = currentWidth / originalWidth;
+      const heightRatio = currentHeight / originalHeight;
 
-function closeModal(event) {
-  if (!event || event.target.id === "modal" || event.target.id === "close-button") {
-    const modal = document.getElementById("modal");
-    modal.classList.remove("opacity-100", "scale-100");
-    modal.classList.add("opacity-0", "scale-90");
+      document.querySelectorAll("map[name='cortesMap'] area").forEach(area => {
+        const coords = area.dataset.originalCoords.split(',').map(Number);
+        const newCoords = coords.map((coord, index) => 
+          index % 2 === 0 ? Math.round(coord * widthRatio) : Math.round(coord * heightRatio)
+        );
+        area.coords = newCoords.join(',');
+      });
+    }
 
-    setTimeout(() => {
-      modal.classList.add("hidden");
-      document.body.classList.remove("overflow-hidden");
-      document.body.style.paddingRight = "";
-    }, 300); // Espera 300ms para ocultarlo después de la animación
-  }
-}
+    document.querySelectorAll("map[name='cortesMap'] area").forEach(area => {
+      area.dataset.originalCoords = area.coords;
+    });
 
-/* Escalar mapa */
-function scaleMap() {
-  const img = document.getElementById("map-image");
-  const originalWidth = 518; 
-  const originalHeight = 367;
-  
-  const currentWidth = img.clientWidth;
-  const currentHeight = img.clientHeight;
-
-  const widthRatio = currentWidth / originalWidth;
-  const heightRatio = currentHeight / originalHeight;
-
-  document.querySelectorAll("map[name='cortesMap'] area").forEach(area => {
-    const coords = area.dataset.originalCoords.split(',').map(Number);
-    const newCoords = coords.map((coord, index) => 
-      index % 2 === 0 ? Math.round(coord * widthRatio) : Math.round(coord * heightRatio)
-    );
-    area.coords = newCoords.join(',');
-  });
-}
-
-document.querySelectorAll("map[name='cortesMap'] area").forEach(area => {
-  area.dataset.originalCoords = area.coords;
-});
-
-window.addEventListener("load", scaleMap);
-window.addEventListener("resize", scaleMap);
+    window.addEventListener("load", scaleMap);
+    window.addEventListener("resize", scaleMap);
   </script>
 
-  <!--Script Idiomas-->
   <script>
     const traducciones = {
       es: {
@@ -581,7 +647,6 @@ window.addEventListener("resize", scaleMap);
     function cambiarIdioma(idioma) {
       if (!traducciones[idioma]) return;
     
-      // Cambia los textos de la navegación y secciones
       document.querySelectorAll(".nav-link, .section-text, [data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
         if (traducciones[idioma][key]) {
@@ -589,15 +654,12 @@ window.addEventListener("resize", scaleMap);
         }
       });
     
-      // Actualiza el texto y la bandera en el botón de selección de idioma
       document.getElementById("language-text").textContent = traducciones[idioma].idioma;
       document.getElementById("language-flag").src = traducciones[idioma].flag;
     
-      // Guarda la selección en localStorage
       localStorage.setItem("selectedLanguage", idioma);
     }
     
-    // Agregar eventos a las opciones de idioma
     document.querySelectorAll(".language-option").forEach(option => {
       option.addEventListener("click", (e) => {
         e.preventDefault();
@@ -607,7 +669,6 @@ window.addEventListener("resize", scaleMap);
       });
     });
     
-    // Cargar idioma guardado al iniciar la página
     document.addEventListener("DOMContentLoaded", () => {
       const savedLang = localStorage.getItem("selectedLanguage") || "en";
       cambiarIdioma(savedLang);
@@ -617,17 +678,16 @@ window.addEventListener("resize", scaleMap);
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   
   
-  <footer class="text-white py-12" style="background-color: #9E7059; position: relative;">
+  <footer class="text-white py-12" style="background-color: #231517; position: relative;">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="flex flex-col items-center">
         <a href="index.html">
-          <img src="/images/logos/logo_1.3.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
+          <img src="/images/logos/logo_1.5.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
         </a>
       </div>
   
-      <!-- Enlaces -->
       <div class="text-center mt-8">
-        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;" data-key="enlaces">Enlaces</h3>
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px; color: #FFFFFF" data-key="enlaces">Enlaces</h3>
         <nav class="space-y-4 text-3xl">
           <a href="index.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="inicio" >Inicio</a>
           <a href="empresa.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="empresa">Empresa</a>
@@ -636,27 +696,22 @@ window.addEventListener("resize", scaleMap);
         </nav>
       </div>
   
-      <!-- Contáctanos -->
       <div class="text-center mt-8">
-        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px;" data-key="contactanos">Contáctanos</h3>
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px; color: #FFFFFF" data-key="contactanos">Contáctanos</h3>
         <p class="text-2xl" data-key="telefono">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
         <p class="text-2xl" data-key="correo">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
       
-        <!-- Redes Sociales -->
         <div class="flex justify-center space-x-8 mt-6">
           
-          <!-- Facebook -->
           <a href="#" aria-label="Facebook" class="hover:opacity-80 transition duration-300">
             <img src="/images/icons/facebook-network-communication-internet-interaction-svgrepo-com.svg" alt="Facebook" class="h-12 w-12">
           </a>
       
-          <!-- Instagram -->
           <a href="#" aria-label="Instagram" class="hover:opacity-80 transition duration-300">
             <img src="/images/icons/instagram-1-svgrepo-com.svg" alt="Instagram" class="h-12 w-12">
           </a>
 
-          <!-- LinkedIn -->
-          <a href="#" aria-label="Instagram" class="hover:opacity-80 transition duration-300">
+          <a href="#" aria-label="LinkedIn" class="hover:opacity-80 transition duration-300">
             <img src="/images/icons/linkedin-svgrepo-com.svg" alt="LinkedIn" class="h-12 w-12">
           </a>
       
@@ -664,7 +719,6 @@ window.addEventListener("resize", scaleMap);
       </div>      
     </div>
   
-    <!-- Pie de página centrado -->
     <div class="border-t border-gray-700 mt-8 pt-4 text-center">
       <p class="text-xl text-white">&copy; 2025 Morenza. Todos los derechos reservados.</p>
     </div>
