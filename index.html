@@ -55,93 +55,21 @@
     .cut-map:hover img {
       transform: scale(1.1);
     }
-    @media (max-width: 768px) {
-      .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      header .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-      nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-      }
-      .language-selector {
-        margin-top: 1rem;
-      }
-      .hero-section h1 {
-        font-size: 2.5rem;
-      }
-      .hero-section p {
-        font-size: 1.5rem;
-      }
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-      .process-card {
-        padding: 1.5rem;
-      }
-      .cut-map img {
-        width: 100%;
-      }
-      footer .grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .footer-logo {
-        height: 12rem;
-      }
-      .footer-links, .footer-contact {
-        text-align: center;
-      }
-      .social-icons {
-        justify-content: center;
-      }
-    }
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .container {
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
-      .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .cut-map img {
-        width: 80%;
-      }
-    }
-    @media (min-width: 1025px) {
-      .container {
-        max-width: 1280px;
-        margin: 0 auto;
-      }
-      .process-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-      .cut-map img {
-        width: 60%;
-      }
-    }
   </style>
 </head>
 <body class="text-white">
   <header class="text-white py-4 bg-[#BF1F2E]">
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-      <a href="index.html" class="mb-4 md:mb-0">
-        <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="h-20 md:h-28">
+    <div class="container mx-auto flex items-center justify-between">
+      <a href="index.html">
+        <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="h-28">
       </a>
-      <nav class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-xl md:text-2xl font-['Blauer Nue']">
+      <nav class="space-x-4 text-2xl font-['Blauer Nue']">
         <a href="/index.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="inicio">Inicio</a>
         <a href="/empresa.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="empresa">Empresa</a>
         <a href="/servicios.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="servicios">Servicios</a>
         <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
       </nav> 
-      <div class="flex items-center space-x-2 mt-4 md:mt-0">
+      <div class="flex items-center space-x-2">
         <button id="language-button" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
           <img id="language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
           <span id="language-text">English (US)</span>
@@ -157,20 +85,20 @@
     </div>
   </header>
 
-  <section class="relative h-[50vh] md:h-screen bg-black bg-cover bg-center" style="background-image: url('/images/img192.jpg');">
+  <section class="relative h-screen bg-black bg-cover bg-center" style="background-image: url('/images/img192.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
-      <div class="text-center px-4">
-        <h1 class="text-3xl md:text-5xl font-bold text-red-600 section-text tracking-widest" data-key="bienvenidos">
+      <div class="text-center">
+        <h1 class="text-5xl font-bold text-red-600 section-text tracking-widest" data-key="bienvenidos">
           Bienvenidos a Nuestro Sitio
         </h1>
-        <p class="mt-4 text-2xl md:text-4xl font-semibold text-white section-text tracking-widest" data-key="sabor">
+        <p class="mt-4 text-4xl font-semibold text-white section-text tracking-widest" data-key="sabor">
           AUTÉNTICO SABOR
         </p>
         <div class="my-4 border-t-4 border-white w-1/6 mx-auto"></div>
-        <h2 class="text-xl md:text-2xl font-semibold text-white section-text tracking-wide" data-key="argentino">
+        <h2 class="text-2xl font-semibold text-white section-text tracking-wide" data-key="argentino">
           100% ARGENTINO
         </h2>
-        <a href="empresa.html" class="mt-6 inline-block bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 text-lg md:text-xl rounded hover:bg-red-400 section-text tracking-widest" data-key="conocenos">
+        <a href="empresa.html" class="mt-6 inline-block bg-red-600 text-white px-8 py-4 text-xl rounded hover:bg-red-400 section-text tracking-widest" data-key="conocenos">
           Conócenos
         </a>
       </div>
@@ -813,47 +741,49 @@
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   
   
-  <footer class="text-white py-8 md:py-12" style="background-color: #231517; position: relative;">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+  <footer class="text-white py-12" style="background-color: #231517; position: relative;">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="flex flex-col items-center">
         <a href="index.html">
-          <img src="/images/logos/logo_1.5.png" alt="MORENZA Logo" class="h-48 md:h-72 lg:h-96 w-auto mb-6">
+          <img src="/images/logos/logo_1.5.png" alt="MORENZA Logo" class="h-72 md:h-80 lg:h-96 w-auto mb-6">
         </a>
       </div>
   
-      <div class="text-center">
-        <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 md:mb-6" style="letter-spacing: 2.3px;" data-key="enlaces">Enlaces</h3>
-        <nav class="space-y-2 md:space-y-4 text-xl md:text-3xl">
-          <a href="index.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="inicio">Inicio</a>
+      <div class="text-center mt-8">
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px; color: #FFFFFF" data-key="enlaces">Enlaces</h3>
+        <nav class="space-y-4 text-3xl">
+          <a href="index.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="inicio" >Inicio</a>
           <a href="empresa.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="empresa">Empresa</a>
           <a href="servicios.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="servicios">Servicios</a>
           <a href="contacto.html" class="block hover:text-red-400 transition duration-300" style="letter-spacing: 2.3px;" data-key="contacto">Contacto</a>
         </nav>
       </div>
   
-      <div class="text-center">
-        <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 md:mb-6" style="letter-spacing: 2.3px;" data-key="contactanos">Contáctanos</h3>
-        <p class="text-lg md:text-2xl" data-key="telefono">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
-        <p class="text-lg md:text-2xl" data-key="correo">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
+      <div class="text-center mt-8">
+        <h3 class="text-3xl font-semibold text-red-600 mb-6" style="letter-spacing: 2.3px; color: #FFFFFF" data-key="contactanos">Contáctanos</h3>
+        <p class="text-2xl" data-key="telefono">Teléfono: <a href="tel:+5493416133413" class="hover:text-red-400 transition duration-300">+54 9 3416133413</a></p>
+        <p class="text-2xl" data-key="correo">Correo: <a href="mailto:samorenza@gmail.com" class="hover:text-red-400 transition duration-300">samorenza@gmail.com</a></p>
       
-        <div class="flex justify-center space-x-6 md:space-x-8 mt-4 md:mt-6">
+        <div class="flex justify-center space-x-8 mt-6">
+          
           <a href="#" aria-label="Facebook" class="hover:opacity-80 transition duration-300">
-            <img src="/images/icons/facebook-network-communication-internet-interaction-svgrepo-com.svg" alt="Facebook" class="h-8 md:h-12 w-8 md:w-12">
+            <img src="/images/icons/facebook-network-communication-internet-interaction-svgrepo-com.svg" alt="Facebook" class="h-12 w-12">
           </a>
       
           <a href="#" aria-label="Instagram" class="hover:opacity-80 transition duration-300">
-            <img src="/images/icons/instagram-1-svgrepo-com.svg" alt="Instagram" class="h-8 md:h-12 w-8 md:w-12">
+            <img src="/images/icons/instagram-1-svgrepo-com.svg" alt="Instagram" class="h-12 w-12">
           </a>
 
           <a href="#" aria-label="LinkedIn" class="hover:opacity-80 transition duration-300">
-            <img src="/images/icons/linkedin-svgrepo-com.svg" alt="LinkedIn" class="h-8 md:h-12 w-8 md:w-12">
+            <img src="/images/icons/linkedin-svgrepo-com.svg" alt="LinkedIn" class="h-12 w-12">
           </a>
+      
         </div>
       </div>      
     </div>
   
-    <div class="border-t border-gray-700 mt-6 md:mt-8 pt-4 text-center">
-      <p class="text-lg md:text-xl text-white">&copy; 2025 Morenza. Todos los derechos reservados.</p>
+    <div class="border-t border-gray-700 mt-8 pt-4 text-center">
+      <p class="text-xl text-white">&copy; 2025 Morenza. Todos los derechos reservados.</p>
     </div>
   </footer>
   <a href="https://wa.me/5493416133413" target="_blank" class="fixed bottom-5 right-5 bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition">
