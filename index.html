@@ -58,28 +58,66 @@
 </head>
 <body class="text-white">
   <header class="text-white py-4 bg-[#BF1F2E]">
-    <div class="container mx-auto flex items-center justify-between">
-      <a href="index.html">
-        <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="h-28">
-      </a>
-      <nav class="space-x-4 text-2xl font-['Blauer Nue']">
-        <a href="/index.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="inicio">Inicio</a>
-        <a href="/empresa.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="empresa">Empresa</a>
-        <a href="/servicios.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="servicios">Servicios</a>
-        <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
-      </nav> 
-      <div class="flex items-center space-x-2">
-        <button id="language-button" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
-          <img id="language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
-          <span id="language-text">English (US)</span>
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="flex-shrink-0">
+          <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="h-20 md:h-28">
+        </a>
+        
+        <!-- Menú hamburguesa para móvil -->
+        <button id="mobile-menu-button" type="button" class="lg:hidden text-white hover:text-[#9E7059] focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
         </button>
-        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
-          <ul class="py-2 font-medium">
-            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es" data-flag="/images/flags/es.png">🇪🇸 Español (ES)</a></li>
-            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="en" data-flag="/images/flags/us.png">🇺🇸 English (US)</a></li>
-            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="zh" data-flag="/images/flags/zh.png">🇨🇳 中文 (ZH)</a></li>
-          </ul>
-        </div>
+
+        <!-- Navegación para desktop -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <div class="space-x-4 text-2xl font-['Blauer Nue']">
+            <a href="/index.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="inicio">Inicio</a>
+            <a href="/empresa.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="empresa">Empresa</a>
+            <a href="/servicios.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="servicios">Servicios</a>
+            <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
+          </div>
+
+          <div class="flex items-center space-x-2">
+            <button id="language-button" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
+              <img id="language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
+              <span id="language-text">English (US)</span>
+            </button>
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
+              <ul class="py-2 font-medium">
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es" data-flag="/images/flags/es.png">🇪🇸 Español (ES)</a></li>
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="en" data-flag="/images/flags/us.png">🇺🇸 English (US)</a></li>
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="zh" data-flag="/images/flags/zh.png">🇨🇳 中文 (ZH)</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Menú móvil -->
+      <div id="mobile-menu" class="hidden lg:hidden mt-4">
+        <nav class="flex flex-col space-y-4 text-xl font-['Blauer Nue']">
+          <a href="/index.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059] py-2" data-key="inicio">Inicio</a>
+          <a href="/empresa.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059] py-2" data-key="empresa">Empresa</a>
+          <a href="/servicios.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059] py-2" data-key="servicios">Servicios</a>
+          <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059] py-2" data-key="contacto">Contacto</a>
+          
+          <div class="py-2">
+            <button id="mobile-language-button" type="button" data-dropdown-toggle="mobile-language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
+              <img id="mobile-language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
+              <span id="mobile-language-text">English (US)</span>
+            </button>
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="mobile-language-dropdown-menu">
+              <ul class="py-2 font-medium">
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es" data-flag="/images/flags/es.png">🇪🇸 Español (ES)</a></li>
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="en" data-flag="/images/flags/us.png">🇺🇸 English (US)</a></li>
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="zh" data-flag="/images/flags/zh.png">🇨🇳 中文 (ZH)</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
   </header>
@@ -186,38 +224,59 @@
 
   <section class="py-12" style="background-color: #9E7059;">
     <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-8" style="letter-spacing: 2.7px; color:#e5dad1" data-key="productos">productos</h2>
-      <div class="relative flex justify-center">
-        <img id="map-image" src="/images/despiece-mod.png" alt="Mapa de Cortes" class="w-2/3 md:w-1/2 rounded-lg" usemap="#cortesMap">
-        
-        <map name="cortesMap">
-          <area shape="poly" coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114" href="javascript:void(0);" alt="Carrilada" onclick="showCutDetails('corte1')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
-          <area shape="poly" coords="98,166,103,178,106,189,108,196,118,191,129,185,142,179,151,176,151,162,156,149,161,140,151,125,143,109,138,96,135,79,125,72,112,76,113,95,114,115,110,130,107,143" href="javascript:void(0);" alt="Pescuezo" onclick="showCutDetails('corte2')" data-original-coords="300,300,50">
-          <area shape="poly" coords="126,69,127,63,143,62,164,63,187,67,206,72,230,78,216,84,199,89,176,91,150,86" href="javascript:void(0);" alt="Morillo" onclick="showCutDetails('corte3')" data-original-coords="400,400,450,450,500,400,450,350">
-          <area shape="poly" coords="138,82,140,96,147,113,154,126,165,138,182,137,203,138,221,137,221,122,226,106,229,93,234,81,220,85,200,92,181,95,155,90" href="javascript:void(0);" alt="Corte 4" onclick="showCutDetails('corte4')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
-          <area shape="poly" coords="179,139,178,199,161,191,153,170,160,147" href="javascript:void(0);" alt="Pez" onclick="showCutDetails('corte5')" data-original-coords="300,300,50">
-          <area shape="poly" coords="107,201,111,218,122,228,137,253,156,263,179,249,178,204,162,194,152,179" href="javascript:void(0);" alt="Pecho" onclick="showCutDetails('corte6')" data-original-coords="400,400,450,450,500,400,450,350">
-          <area shape="poly" coords="183,252,208,253,210,268,204,289,201,335,195,346,185,346,185,303" href="javascript:void(0);" alt="Morcillo Anterior" onclick="showCutDetails('corte7')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
-          <area shape="poly" coords="182,250,209,250,213,244,220,240,219,217,182,204,182,231" href="javascript:void(0);" alt="Corte 8" onclick="showCutDetails('corte8')" data-original-coords="300,300,50">
-          <area shape="poly" coords="182,201,197,207,210,198,217,187,211,173,199,170,188,174,182,181" href="javascript:void(0);" alt="Corte 9" onclick="showCutDetails('corte9')" data-original-coords="400,400,450,450,500,400,450,350">
-          <area shape="poly" coords="182,176,184,140,222,140,229,164,226,184,221,197,220,214,200,207,215,195,217,179,210,169,197,168" href="javascript:void(0);" alt="Corte 10" onclick="showCutDetails('corte10')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
-          <area shape="poly" coords="223,242,236,242,249,242,247,226,237,208,225,197,223,218" href="javascript:void(0);" alt="Corte 11" onclick="showCutDetails('corte11')" data-original-coords="300,300,50">
-          <area shape="poly" coords="226,193,230,178,232,159,227,141,265,139,274,159,278,183,280,208,277,238,254,243,246,214" href="javascript:void(0);" alt="Corte 12" onclick="showCutDetails('corte12')" data-original-coords="400,400,450,450,500,400,450,350">
-          <area shape="poly" coords="225,123,230,102,240,79,287,83,303,136,268,136,226,138" href="javascript:void(0);" alt="Corte 13" onclick="showCutDetails('corte13')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
-          <area shape="poly" coords="280,238,284,206,281,169,273,141,358,137,360,183,375,225,353,239,320,256,298,254" href="javascript:void(0);" alt="Corte 14" onclick="showCutDetails('corte14')" data-original-coords="300,300,50">
-          <area shape="poly" coords="306,135,355,134,361,109,380,78,348,98,332,98,311,93,293,86" href="javascript:void(0);" alt="Corte 15" onclick="showCutDetails('corte15')" data-original-coords="400,400,450,450,500,400,450,350">
-          <area shape="poly" coords="295,79,388,62,364,85,345,95,318,92" href="javascript:void(0);" alt="Corte 16" onclick="showCutDetails('corte16')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
-          <area shape="poly" coords="362,131,365,107,381,85,392,64,426,57,442,68,458,89,428,117,411,116,401,128" href="javascript:void(0);" alt="Corte 17" onclick="showCutDetails('corte17')" data-original-coords="300,300,50">
-          <area shape="circle" coords="419,136,15" href="javascript:void(0);" alt="Corte 18" onclick="showCutDetails('corte18')" data-original-coords="400,400,450,450,500,400,450,350">
-          <area shape="poly" coords="361,137,363,169,384,170,413,160,413,153,401,147,398,133" href="javascript:void(0);" alt="Corte 19" onclick="showCutDetails('corte19')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
-          <area shape="poly" coords="366,173,373,202,382,223,396,214,411,197,414,165,391,173" href="javascript:void(0);" alt="Corte 20" onclick="showCutDetails('corte20')" data-original-coords="300,300,50">
-          <area shape="poly" coords="460,259,474,248,477,335,450,347,459,318,461,292,452,277" href="javascript:void(0);" alt="Corte 21" onclick="showCutDetails('corte21')" data-original-coords="400,400,450,450,500,400,450,350">
-          <area shape="poly" coords="389,227,405,245,449,273,460,254,471,239,461,217,427,215" href="javascript:void(0);" alt="Corte 22" onclick="showCutDetails('corte22')" data-original-coords="44,139,57,149,73,155,85,156,96,163,105,143,110,121,111,99,109,82,95,83,78,88,65,100,53,114">
-          <area shape="poly" coords="394,221,424,212,460,211,453,170,455,147,459,132,439,131,435,150,418,156,417,182,413,199" href="javascript:void(0);" alt="Corte 23" onclick="showCutDetails('corte23')" data-original-coords="300,300,50">
-          <area shape="poly" coords="464,204,470,173,471,133,463,134,455,162" href="javascript:void(0);" alt="Corte 24" onclick="showCutDetails('corte24')" data-original-coords="400,400,450,450,500,400,450,350">
-          <area shape="poly" coords="430,119,437,129,470,129,468,108,461,92,445,103" href="javascript:void(0);" alt="Corte 25" onclick="showCutDetails('corte25')" data-original-coords="300,300,50">
-          <area shape="poly" coords="441,61,450,63,466,79,479,105,495,143,500,184,510,256,503,235,503,256,496,269,490,162,476,127,468,97" href="javascript:void(0);" alt="Corte 26" onclick="showCutDetails('corte26')" data-original-coords="400,400,450,450,500,400,450,350">
-        </map>
+      <h2 class="text-4xl font-bold text-center mb-12" style="letter-spacing: 2.7px; color:#e5dad1" data-key="productos">productos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 px-4">
+        <!-- Columna izquierda con nombres de cortes -->
+        <div class="space-y-4 flex flex-col items-stretch">
+          <button onclick="showCutDetails('corte1')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">01. Nalga</button>
+          <button onclick="showCutDetails('corte2')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">02. Cuadrada</button>
+          <button onclick="showCutDetails('corte3')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">02b. Peceto</button>
+          <button onclick="showCutDetails('corte4')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">03. Colita de Cuadril</button>
+          <button onclick="showCutDetails('corte5')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">04. Bola de Lomo</button>
+          <button onclick="showCutDetails('corte6')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">05. Garrón</button>
+          <button onclick="showCutDetails('corte7')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">06. Tortuguita</button>
+          <button onclick="showCutDetails('corte8')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">07. Centro de Carnaza de Paleta</button>
+          <button onclick="showCutDetails('corte9')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">07b. Palomita / Chingolo</button>
+          <button onclick="showCutDetails('corte10')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">08. Cogote</button>
+        </div>
+
+        <!-- Mapa de cortes en el centro -->
+        <div class="relative flex justify-center items-start col-span-3">
+          <div class="relative group h-full flex items-center">
+            <img id="map-image" src="/images/media-res.png" alt="Mapa de Cortes" class="w-full h-[1200px] object-contain rounded-lg" usemap="#cortesMap">
+            <map name="cortesMap" class="map">
+              <area shape="poly" alt="1 Nalga" title="1 Nalga" href="javascript:void(0)" onclick="showCutDetails('corte1')" coords="352,124,338,128,327,136,330,151,340,168,351,184,358,186,365,178,371,168,376,160,389,155,388,145,377,134,364,124">
+              <area shape="poly" alt="2 Cuadrada" title="2 Cuadrada" href="javascript:void(0)" onclick="showCutDetails('corte2')" coords="153,64,115,80,122,93,139,102,147,110,153,143,169,144,200,132,192,115,191,103">
+              <area shape="poly" alt="3 Peceto" title="3 Peceto" href="javascript:void(0)" onclick="showCutDetails('corte3')" coords="148,150,132,149,111,130,112,152,117,169,152,186,146,170">
+              <area shape="poly" alt="4 Bola de Lomo" title="4 Bola de Lomo" href="javascript:void(0)" onclick="showCutDetails('corte4')" coords="109,82,108,104,111,128,132,148,147,150,153,143,148,112,138,101,122,93,114,81">
+              <area shape="poly" alt="5 Garrón" title="5 Garrón" href="javascript:void(0)" onclick="showCutDetails('corte5')" coords="108,82,152,64,138,40,122,28,113,30,103,38,103,49,108,64">
+              <area shape="poly" alt="6 Tortuguita" title="6 Tortuguita" href="javascript:void(0)" onclick="showCutDetails('corte6')" coords="353,89,348,105,354,124,368,127,377,122,379,102,372,93">
+              <area shape="poly" alt="7 Paleta" title="7 Paleta" href="javascript:void(0)" onclick="showCutDetails('corte7')" coords="188,344,180,374,170,391,155,411,142,418,125,415,119,407,107,400,103,390,111,379,129,374,150,362,160,350,171,343">
+              <area shape="poly" alt="8 Cogote" title="8 Cogote" href="javascript:void(0)" onclick="showCutDetails('corte8')" coords="353,393,357,400,342,430,354,438,370,444,384,446,397,442,412,436,366,404,363,394">
+              <area shape="poly" alt="9 Roast Beef" title="9 Roast Beef" href="javascript:void(0)" onclick="showCutDetails('corte9')" coords="367,367,362,395,412,398,418,389,416,378">
+              <area shape="poly" alt="10 Brazuelo / Osobuco" title="10 Brazuelo / Osobuco" href="javascript:void(0)" onclick="showCutDetails('corte10')" coords="295,389,295,397,278,423,298,435,320,421,342,429,357,400,353,393">
+              <area shape="poly" alt="11 Marucha" title="11 Marucha" href="javascript:void(0)" onclick="showCutDetails('corte11')" coords="188,344,206,347,208,366,200,368,191,379,183,391,177,395,169,390,180,374">
+              <area shape="poly" alt="12 Bife Angosto" title="12 Bife Angosto" href="javascript:void(0)" onclick="showCutDetails('corte12')" coords="151,184,165,197,174,287,204,284,196,250,191,232,193,208,202,185,190,180">
+              <area shape="poly" alt="13 Bife Ancho" title="13 Bife Ancho" href="javascript:void(0)" onclick="showCutDetails('corte13')" coords="174,287,177,325,207,336,204,284">
+              <area shape="poly" alt="14 Cuadril" title="14 Cuadril" href="javascript:void(0)" onclick="showCutDetails('corte14')" coords="202,184,212,154,203,144,200,132,169,143,153,142,148,150,146,170,152,185,190,179">
+              <area shape="poly" alt="15 Asado" title="15 Asado" href="javascript:void(0)" onclick="showCutDetails('corte15')" coords="326,391,324,245,345,242,372,245,392,254,393,293,387,306,385,322,368,366,362,394">
+            </map>
+          </div>
+        </div>
+
+        <!-- Columna derecha con nombres de cortes -->
+        <div class="space-y-4 flex flex-col items-stretch">
+          <button onclick="showCutDetails('corte11')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">09. Roast Beef</button>
+          <button onclick="showCutDetails('corte12')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">10. Brazuelo / Osobuco</button>
+          <button onclick="showCutDetails('corte13')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">11. Marucha</button>
+          <button onclick="showCutDetails('corte14')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">12. Bife angosto</button>
+          <button onclick="showCutDetails('corte15')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">12b. Lomo</button>
+          <button onclick="showCutDetails('corte16')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">13. Bife ancho</button>
+          <button onclick="showCutDetails('corte17')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">14. Cuadril</button>
+          <button onclick="showCutDetails('corte18')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">14a. Tapa de cuadril</button>
+          <button onclick="showCutDetails('corte19')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">14b. Corazón de cuadril</button>
+          <button onclick="showCutDetails('corte20')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">15. Asado</button>
+        </div>
       </div>
     </div>
   </section>
@@ -285,215 +344,172 @@
     </div>
   </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+<script>
+  window.onload = function () {
+    imageMapResize();
+  };
+</script>
 <script>
     const cutsData = {
       corte1: {
-        image: "/images/cortes/cogote.jpg",
+        image: "/images/cortes/nalga-1.png",
         details: [
-          { especificacion: "Cogote", detalle: "Corte 1" },
+          { especificacion: "Nalga", detalle: "Nalga" },
           { especificacion: "Peso Promedio", detalle: "1.5 kg" },
           { especificacion: "Preparación", detalle: "Ideal para asar" }
         ]
       },
       corte2: {
-        image: "/images/cortes/pescuezo.jpeg",
+        image: "/images/cortes/cuadrada-2.png",
         details: [
-          { especificacion: "Pescuezo", detalle: "Corte 2" },
+          { especificacion: "Cuadrada", detalle: "Cuadrada" },
           { especificacion: "Peso Promedio", detalle: "2 kg" },
           { especificacion: "Preparación", detalle: "Bueno para guisar" }
         ]
       },
       corte3: {
-        image: "/images/cortes/morillo.jpg",
+        image: "/images/cortes/peceto-2b.png",
         details: [
-          { especificacion: "Morrillo", detalle: "Corte 3" },
+          { especificacion: "Peceto", detalle: "Peceto" },
           { especificacion: "Peso Promedio", detalle: "1.2 kg" },
           { especificacion: "Preparación", detalle: "Perfecto para estofar" }
         ]
       },
       corte4: {
-        image: "/images/cortes/aguja.jpg",
+        image: "/images/cortes/colita-de-cuadril-3.jpg",
         details: [
-          { especificacion: "Aguja", detalle: "Corte 4" },
+          { especificacion: "Colita de Cuadril", detalle: "Colita de Cuadril" },
           { especificacion: "Peso Promedio", detalle: "1.5 kg" },
           { especificacion: "Preparación", detalle: "Ideal para asar" }
         ]
       },
       corte5: {
-        image: "/images/cortes/pez.webp",
+        image: "/images/cortes/bola-de-lomo-4.jpg",
         details: [
-          { especificacion: "Pez", detalle: "Corte 5" },
+          { especificacion: "Bola de Lomo", detalle: "Bola de Lomo" },
           { especificacion: "Peso Promedio", detalle: "1.5 kg" },
           { especificacion: "Preparación", detalle: "Ideal para asar" }
         ]
       },
       corte6: {
-        image: "/images/cortes/pecho.jpeg",
+        image: "/images/cortes/garron-5.png",
         details: [
-          { especificacion: "Pecho", detalle: "Corte 6" },
+          { especificacion: "Garrón", detalle: "Garrón" },
           { especificacion: "Peso Promedio", detalle: "2 kg" },
           { especificacion: "Preparación", detalle: "Bueno para guisar" }
         ]
       },
       corte7: {
-        image: "/images/cortes/MORCILLO.jpg",
+        image: "/images/cortes/tortuguita-6.jpg",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 7" },
+          { especificacion: "Tortuguita", detalle: "Tortuguita" },
           { especificacion: "Peso Promedio", detalle: "1.2 kg" },
           { especificacion: "Preparación", detalle: "Perfecto para estofar" }
         ]
       },
       corte8: {
-        image: "/images/cortes/Brazuelo.jpg",
+        image: "/images/cortes/centro-de-carnaza-paleta-7.jpg",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 8" },
+          { especificacion: "Centro de Carnaza de Paleta", detalle: "Centro de Carnaza de Paleta" },
           { especificacion: "Peso Promedio", detalle: "1.5 kg" },
           { especificacion: "Preparación", detalle: "Ideal para asar" }
         ]
       },
       corte9: {
-        image: "/images/cortes/llana.jpg",
+        image: "/images/cortes/palomita-chingolo-7b.jpg",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 9" },
+          { especificacion: "Chingolo", detalle: "Chingolo" },
           { especificacion: "Peso Promedio", detalle: "1.5 kg" },
           { especificacion: "Preparación", detalle: "Ideal para asar" }
         ]
       },
       corte10: {
-        image: "/images/cortes/espaldita.jpg",
+        image: "/images/cortes/cogote-8.webp",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 10" },
+          { especificacion: "Cogote", detalle: "Cogote" },
           { especificacion: "Peso Promedio", detalle: "2 kg" },
           { especificacion: "Preparación", detalle: "Bueno para guisar" }
         ]
       },
       corte11: {
-        image: "/images/cortes/aleta.webp",
+        image: "/images/cortes/roast-beef-9.jpg",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 11" },
+          { especificacion: "Roast Beef", detalle: "Roast Beef" },
           { especificacion: "Peso Promedio", detalle: "1.2 kg" },
           { especificacion: "Preparación", detalle: "Perfecto para estofar" }
         ]
       },
       corte12: {
-        image: "/images/cortes/costillar.jpeg",
+        image: "/images/cortes/brazuelo-osobuco-10.webp",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 12" },
+          { especificacion: "Brazuelo / Osobuco", detalle: "Brazuelo / Osobuco" },
           { especificacion: "Peso Promedio", detalle: "1.5 kg" },
           { especificacion: "Preparación", detalle: "Ideal para asar" }
         ]
       },
       corte13: {
-        image: "/images/cortes/lomo-alto.jpg",
+        image: "/images/cortes/marucha-11.jpg",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 13" },
+          { especificacion: "Marucha", detalle: "Marucha" },
           { especificacion: "Peso Promedio", detalle: "1.5 kg" },
           { especificacion: "Preparación", detalle: "Ideal para asar" }
         ]
       },
       corte14: {
-        image: "/images/cortes/falda.jpg",
+        image: "/images/cortes/bife-angosto-12.jpg",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 14" },
+          { especificacion: "Bife Angosto", detalle: "Bife Angosto" },
           { especificacion: "Peso Promedio", detalle: "2 kg" },
           { especificacion: "Preparación", detalle: "Bueno para guisar" }
         ]
       },
       corte15: {
-        image: "/images/cortes/lomo-bajo.jpg",
+        image: "/images/cortes/lomo-12b.jpg",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 15" },
+          { especificacion: "Lomo", detalle: "Lomo" },
           { especificacion: "Peso Promedio", detalle: "1.2 kg" },
           { especificacion: "Preparación", detalle: "Perfecto para estofar" }
         ]
       },
       corte16: {
-        image: "/images/cortes/solomillo.jpg",
+        image: "/images/cortes/bife-ancho-13.jpg",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 16" },
+          { especificacion: "Bife Ancho", detalle: "Bife Ancho" },
           { especificacion: "Peso Promedio", detalle: "1.5 kg" },
           { especificacion: "Preparación", detalle: "Ideal para asar" }
         ]
       },
       corte17: {
-        image: "/images/cortes/cadera.webp",
+        image: "/images/cortes/cuadril-14.webp	",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 17" },
+          { especificacion: "Cuadril", detalle: "Cuadril" },
           { especificacion: "Peso Promedio", detalle: "1.5 kg" },
           { especificacion: "Preparación", detalle: "Ideal para asar" }
         ]
       },
       corte18: {
-        image: "/images/cortes/tapa-vaca.jpg",
+        image: "/images/cortes/tapa-de-cuadril-14a.webp",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 18" },
+          { especificacion: "Tapa de Cuadril", detalle: "Tapa de Cuadril" },
           { especificacion: "Peso Promedio", detalle: "2 kg" },
           { especificacion: "Preparación", detalle: "Bueno para guisar" }
         ]
       },
       corte19: {
-        image: "/images/cortes/babilla.webp",
+        image: "/images/cortes/corazon-de-cuadril-14b.jpg",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 19" },
+          { especificacion: "Corazón de Cuadril", detalle: "Corazón de Cuadril" },
           { especificacion: "Peso Promedio", detalle: "1.2 kg" },
           { especificacion: "Preparación", detalle: "Perfecto para estofar" }
         ]
       },
       corte20: {
-        image: "/images/cortes/rabillo-de-cadera.jpg",
+        image: "/images/cortes/asado-15.jpg",
         details: [
-          { especificacion: "Nombre", detalle: "Corte 20" },
+          { especificacion: "Asado", detalle: "Asado" },
           { especificacion: "Peso Promedio", detalle: "1.5 kg" },
           { especificacion: "Preparación", detalle: "Ideal para asar" }
-        ]
-      },
-      corte21: {
-        image: "/images/cortes/morcillo-posterior.jpg",
-        details: [
-          { especificacion: "Nombre", detalle: "Corte 21" },
-          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
-          { especificacion: "Preparación", detalle: "Ideal para asar" }
-        ]
-      },
-      corte22: {
-        image: "/images/cortes/culata-de-contra.jpg",
-        details: [
-          { especificacion: "Nombre", detalle: "Corte 22" },
-          { especificacion: "Peso Promedio", detalle: "2 kg" },
-          { especificacion: "Preparación", detalle: "Bueno para guisar" }
-        ]
-      },
-      corte23: {
-        image: "/images/cortes/contra.jpg",
-        details: [
-          { especificacion: "Nombre", detalle: "Corte 23" },
-          { especificacion: "Peso Promedio", detalle: "1.2 kg" },
-          { especificacion: "Preparación", detalle: "Perfecto para estofar" }
-        ]
-      },
-      corte24: {
-        image: "/images/cortes/redondo.jpg",
-        details: [
-          { especificacion: "Nombre", detalle: "Corte 24" },
-          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
-          { especificacion: "Preparación", detalle: "Ideal para asar" }
-        ]
-      },
-      corte25: {
-        image: "/images/cortes/tapilla-de-vaca.png",
-        details: [
-          { especificacion: "Nombre", detalle: "Corte 25" },
-          { especificacion: "Peso Promedio", detalle: "1.5 kg" },
-          { especificacion: "Preparación", detalle: "Ideal para asar" }
-        ]
-      },
-      corte26: {
-        image: "/images/cortes/rabo.webp",
-        details: [
-          { especificacion: "Nombre", detalle: "Corte 26" },
-          { especificacion: "Peso Promedio", detalle: "2 kg" },
-          { especificacion: "Preparación", detalle: "Bueno para guisar" }
         ]
       },
     };
@@ -715,8 +731,13 @@
         }
       });
     
+      // Actualizar texto y bandera en el menú desktop
       document.getElementById("language-text").textContent = traducciones[idioma].idioma;
       document.getElementById("language-flag").src = traducciones[idioma].flag;
+
+      // Actualizar texto y bandera en el menú móvil
+      document.getElementById("mobile-language-text").textContent = traducciones[idioma].idioma;
+      document.getElementById("mobile-language-flag").src = traducciones[idioma].flag;
     
       localStorage.setItem("selectedLanguage", idioma);
     }
@@ -726,7 +747,9 @@
         e.preventDefault();
         const idioma = option.getAttribute("data-lang");
         cambiarIdioma(idioma);
+        // Cerrar ambos menús desplegables
         document.getElementById("language-dropdown-menu").classList.add("hidden");
+        document.getElementById("mobile-language-dropdown-menu").classList.add("hidden");
       });
     });
     
@@ -795,6 +818,32 @@
     gtag('js', new Date());
   
     gtag('config', 'G-ZZ5TRWSWNN');
+  </script>
+
+  <!-- Script para el menú móvil -->
+  <script>
+    // Toggle del menú móvil
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Cerrar el menú móvil cuando se hace clic en un enlace
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Cerrar el menú móvil cuando se hace clic fuera de él
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
   </script>
 </body>
 </html>

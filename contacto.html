@@ -216,28 +216,66 @@
 </head>
 <body class="text-white">
   <header class="text-white py-4 bg-[#BF1F2E]">
-    <div class="container mx-auto flex items-center justify-between">
-      <a href="index.html">
-        <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="h-28">
-      </a>
-      <nav class="space-x-4 text-2xl font-['Blauer Nue']">
-        <a href="/index.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="inicio">Inicio</a>
-        <a href="/empresa.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="empresa">Empresa</a>
-        <a href="/servicios.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="servicios">Servicios</a>
-        <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
-      </nav> 
-      <div class="flex items-center space-x-2">
-        <button id="language-button" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
-          <img id="language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
-          <span id="language-text">English (US)</span>
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="flex-shrink-0">
+          <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="h-20 md:h-28">
+        </a>
+        
+        <!-- Menú hamburguesa para móvil -->
+        <button id="mobile-menu-button" type="button" class="lg:hidden text-white hover:text-[#9E7059] focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
         </button>
-        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
-          <ul class="py-2 font-medium">
-            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es" data-flag="/images/flags/es.png">🇪🇸 Español (ES)</a></li>
-            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="en" data-flag="/images/flags/us.png">🇺🇸 English (US)</a></li>
-            <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="zh" data-flag="/images/flags/zh.png">🇨🇳 中文 (ZH)</a></li>
-          </ul>
-        </div>
+
+        <!-- Navegación para desktop -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <div class="space-x-4 text-2xl font-['Blauer Nue']">
+            <a href="/index.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="inicio">Inicio</a>
+            <a href="/empresa.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="empresa">Empresa</a>
+            <a href="/servicios.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="servicios">Servicios</a>
+            <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="contacto">Contacto</a>
+          </div>
+
+          <div class="flex items-center space-x-2">
+            <button id="language-button" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
+              <img id="language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
+              <span id="language-text">English (US)</span>
+            </button>
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
+              <ul class="py-2 font-medium">
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es" data-flag="/images/flags/es.png">🇪🇸 Español (ES)</a></li>
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="en" data-flag="/images/flags/us.png">🇺🇸 English (US)</a></li>
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="zh" data-flag="/images/flags/zh.png">🇨🇳 中文 (ZH)</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Menú móvil -->
+      <div id="mobile-menu" class="hidden lg:hidden mt-4">
+        <nav class="flex flex-col space-y-4 text-xl font-['Blauer Nue']">
+          <a href="/index.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059] py-2" data-key="inicio">Inicio</a>
+          <a href="/empresa.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059] py-2" data-key="empresa">Empresa</a>
+          <a href="/servicios.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059] py-2" data-key="servicios">Servicios</a>
+          <a href="/contacto.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059] py-2" data-key="contacto">Contacto</a>
+          
+          <div class="py-2">
+            <button id="mobile-language-button" type="button" data-dropdown-toggle="mobile-language-dropdown-menu" class="inline-flex items-center justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
+              <img id="mobile-language-flag" src="/images/banderas/eeuu.png" alt="Language Flag" class="w-5 h-5 me-2">
+              <span id="mobile-language-text">English (US)</span>
+            </button>
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="mobile-language-dropdown-menu">
+              <ul class="py-2 font-medium">
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="es" data-flag="/images/flags/es.png">🇪🇸 Español (ES)</a></li>
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="en" data-flag="/images/flags/us.png">🇺🇸 English (US)</a></li>
+                <li><a href="#" class="language-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" data-lang="zh" data-flag="/images/flags/zh.png">🇨🇳 中文 (ZH)</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
   </header>
@@ -442,22 +480,29 @@
           el.innerHTML = traducciones[idioma][key];
         }
       });
-
+    
+      // Actualizar texto y bandera en el menú desktop
       document.getElementById("language-text").textContent = traducciones[idioma].idioma;
       document.getElementById("language-flag").src = traducciones[idioma].flag;
+
+      // Actualizar texto y bandera en el menú móvil
+      document.getElementById("mobile-language-text").textContent = traducciones[idioma].idioma;
+      document.getElementById("mobile-language-flag").src = traducciones[idioma].flag;
     
       localStorage.setItem("selectedLanguage", idioma);
     }
-
+    
     document.querySelectorAll(".language-option").forEach(option => {
       option.addEventListener("click", (e) => {
         e.preventDefault();
         const idioma = option.getAttribute("data-lang");
         cambiarIdioma(idioma);
+        // Cerrar ambos menús desplegables
         document.getElementById("language-dropdown-menu").classList.add("hidden");
+        document.getElementById("mobile-language-dropdown-menu").classList.add("hidden");
       });
     });
-
+    
     document.addEventListener("DOMContentLoaded", () => {
       const savedLang = localStorage.getItem("selectedLanguage") || "es";
       cambiarIdioma(savedLang);
@@ -516,4 +561,30 @@
   <a href="https://wa.me/5493413635111" target="_blank" class="fixed bottom-5 right-5 bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition">
     <img src="/images/whatsapp-icon.svg" alt="WhatsApp" class="w-12 h-12">
   </a>
+
+  <!-- Script para el menú móvil -->
+  <script>
+    // Toggle del menú móvil
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Cerrar el menú móvil cuando se hace clic en un enlace
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Cerrar el menú móvil cuando se hace clic fuera de él
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
