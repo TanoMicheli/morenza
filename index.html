@@ -64,14 +64,12 @@
           <img src="/images/logos/logo_3.png" alt="MORENZA Logo" class="h-20 md:h-28">
         </a>
         
-        <!-- Menú hamburguesa para móvil -->
         <button id="mobile-menu-button" type="button" class="lg:hidden text-white hover:text-[#9E7059] focus:outline-none">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
 
-        <!-- Navegación para desktop -->
         <nav class="hidden lg:flex items-center space-x-8">
           <div class="space-x-4 text-2xl font-['Blauer Nue']">
             <a href="/index.html" class="text-white nav-link tracking-widest transition-colors hover:text-[#9E7059]" data-key="inicio">Inicio</a>
@@ -226,7 +224,6 @@
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold text-center mb-12" style="letter-spacing: 2.7px; color:#e5dad1" data-key="productos">productos</h2>
       <div class="grid grid-cols-1 md:grid-cols-5 gap-8 px-4">
-        <!-- Columna izquierda con nombres de cortes -->
         <div class="space-y-4 flex flex-col items-stretch">
           <button onclick="showCutDetails('corte1')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">01. Nalga</button>
           <button onclick="showCutDetails('corte2')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">02. Cuadrada</button>
@@ -240,7 +237,6 @@
           <button onclick="showCutDetails('corte10')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">08. Cogote</button>
         </div>
 
-        <!-- Mapa de cortes en el centro -->
         <div class="relative flex justify-center items-start col-span-3">
           <div class="relative group h-full flex items-center">
             <img id="map-image" src="/images/media-res.png" alt="Mapa de Cortes" class="w-full h-[1200px] object-contain rounded-lg" usemap="#cortesMap">
@@ -264,7 +260,6 @@
           </div>
         </div>
 
-        <!-- Columna derecha con nombres de cortes -->
         <div class="space-y-4 flex flex-col items-stretch">
           <button onclick="showCutDetails('corte11')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">09. Roast Beef</button>
           <button onclick="showCutDetails('corte12')" class="w-full text-left px-6 py-3 text-xl text-white hover:text-red-400 rounded-lg transition duration-300 border border-[#e5dad1] hover:border-red-400" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2.3px;">10. Brazuelo / Osobuco</button>
@@ -731,11 +726,9 @@
         }
       });
     
-      // Actualizar texto y bandera en el menú desktop
       document.getElementById("language-text").textContent = traducciones[idioma].idioma;
       document.getElementById("language-flag").src = traducciones[idioma].flag;
 
-      // Actualizar texto y bandera en el menú móvil
       document.getElementById("mobile-language-text").textContent = traducciones[idioma].idioma;
       document.getElementById("mobile-language-flag").src = traducciones[idioma].flag;
     
@@ -747,7 +740,6 @@
         e.preventDefault();
         const idioma = option.getAttribute("data-lang");
         cambiarIdioma(idioma);
-        // Cerrar ambos menús desplegables
         document.getElementById("language-dropdown-menu").classList.add("hidden");
         document.getElementById("mobile-language-dropdown-menu").classList.add("hidden");
       });
@@ -822,7 +814,6 @@
 
   <!-- Script para el menú móvil -->
   <script>
-    // Toggle del menú móvil
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -830,7 +821,6 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Cerrar el menú móvil cuando se hace clic en un enlace
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -838,7 +828,6 @@
       });
     });
 
-    // Cerrar el menú móvil cuando se hace clic fuera de él
     document.addEventListener('click', (e) => {
       if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
         mobileMenu.classList.add('hidden');
